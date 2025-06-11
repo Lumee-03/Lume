@@ -5,66 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/alpinejs" defer></script>
+  <style>
+    /* Esconde as imagens que não estão ativas */
+    .hidden-slide {
+      display: none;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Header com logo -->
-  <header class="bg-purple-500 p-4">
-    <div class="max-w-6xl mx-auto flex items-center">
-      <img src="logo.png" alt="Logo Lume" class="h-20">
+  <!-- Header -->
+  <header class="bg-purple-500 text-white p-6">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <img src="logo.png" alt="Lume Logo" class="h-20">
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-16 bg-pink-100">
-    <h2 class="text-4xl font-semibold mb-4 text-purple-700">Produtos para Jovens e Modernas</h2>
-    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">
-      Descubra tendências que combinam com seu estilo e realce sua beleza com nossos produtos afiliados.
-    </p>
-    <a href="#produto" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produto</a>
-  </section>
-
-  <!-- Produto com carrossel -->
-  <section id="produto" class="py-12 px-4 max-w-4xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Destaque da Semana</h3>
-
-    <div x-data="{ slide: 1 }" class="relative">
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <!-- Slides -->
-        <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (slide - 1) * 100 + '%)'">
-  <div class="w-full flex-shrink-0 flex justify-center items-center bg-white">
-    <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="max-w-full h-auto" />
-  </div>
-  <div class="w-full flex-shrink-0 flex justify-center items-center bg-white">
-    <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="max-w-full h-auto" />
-  </div>
-</div>
-
-
-      <!-- Controles -->
-      <div class="flex justify-center space-x-2 mt-4">
-        <button @click="slide = 1" class="w-3 h-3 rounded-full" :class="slide === 1 ? 'bg-purple-600' : 'bg-purple-300'"></button>
-        <button @click="slide = 2" class="w-3 h-3 rounded-full" :class="slide === 2 ? 'bg-purple-600' : 'bg-purple-300'"></button>
+  <!-- Hero Section com Carrossel -->
+  <section class="text-center py-12 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-4 text-purple-700">Produto em Destaque</h2>
+    <div class="relative overflow-hidden rounded-lg shadow-lg max-w-2xl mx-auto">
+      <!-- Slides -->
+      <div id="carousel" class="relative w-full">
+        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="carousel-slide w-full h-auto object-contain" />
+        <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="carousel-slide w-full h-auto object-contain hidden-slide" />
       </div>
-
-      <!-- Informações do Produto -->
-      <div class="mt-6 text-center">
-        <h4 class="text-xl font-bold text-purple-700">Máscara Kérastase Anti-Frizz</h4>
-        <p class="text-gray-600 max-w-md mx-auto mt-2">
-          Máscara capilar anti-frizz com ácido hialurônico e ácido glicólico para hidratação profunda.
-        </p>
-        <a href="https://amzn.to/44astKK?tag=043135621-20" target="_blank" class="mt-4 inline-block bg-purple-500 text-white px-6 py-2 rounded hover:bg-purple-600 transition">
-          Comprar na Amazon
-        </a>
+      
+      <!-- Botões de navegação -->
+      <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
+        <button onclick="previousSlide()" class="bg-white bg-opacity-70 px-2 py-1 rounded-r shadow">⟨</button>
+      </div>
+      <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+        <button onclick="nextSlide()" class="bg-white bg-opacity-70 px-2 py-1 rounded-l shadow">⟩</button>
       </div>
     </div>
+
+    <!-- Botão de compra -->
+    <a href="https://amzn.to/44astKK?tag=043135621-20" target="_blank" class="mt-6 inline-block bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
+      Comprar na Amazon
+    </a>
   </section>
 
-  <!-- Rodapé -->
+  <!-- Footer -->
   <footer class="py-6 text-center text-gray-600 border-t">
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Script para o carrossel -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden-slide', i !== index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function previousSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    // Troca automática a cada 5 segundos
+    setInterval(nextSlide, 5000);
+  </script>
 </body>
 </html>
