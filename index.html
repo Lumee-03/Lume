@@ -8,17 +8,18 @@
 </head>
 <body class="bg-white text-gray-800 font-sans relative">
 
-  <!-- Botão flutuante de 3 pontinhos -->
-  <div class="fixed top-4 right-4 z-50">
-    <button id="menuBtn" class="bg-purple-600 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+  <!-- Botão Hamburguer no canto superior esquerdo -->
+  <div class="fixed top-4 left-4 z-50">
+    <button id="menuBtn" class="bg-purple-600 text-white p-2 rounded-md shadow-lg hover:bg-purple-700 focus:outline-none">
+      <!-- Ícone de 3 linhas -->
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6h.01M12 12h.01M12 18h.01"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
 
   <!-- Menu lateral -->
-  <div id="menuPanel" class="hidden fixed top-16 right-4 bg-white border border-gray-200 shadow-lg rounded-lg p-4 z-50 w-60">
+  <div id="menuPanel" class="hidden fixed top-16 left-4 bg-white border border-gray-200 shadow-lg rounded-lg p-4 z-50 w-64">
     <h4 class="text-lg font-semibold mb-3 text-purple-700">Categorias</h4>
     <ul class="space-y-2">
       <li><a href="#corpo" class="text-gray-700 hover:text-purple-600 block">Corpo e Banho</a></li>
@@ -44,7 +45,7 @@
   <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-purple-700 text-center">Corpo e Banho</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Produto Exemplo -->
+      <!-- Produto -->
       <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
         <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Produto corpo" class="w-full h-[400px] object-contain bg-white">
         <div class="p-4">
@@ -75,7 +76,7 @@
   <section id="depilacao" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-purple-700 text-center">Depilação e Barbear</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Produto Exemplo -->
+      <!-- Produto -->
       <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
         <img src="https://via.placeholder.com/500x500?text=Depilador" alt="Depilador" class="w-full h-[400px] object-contain bg-white">
         <div class="p-4">
