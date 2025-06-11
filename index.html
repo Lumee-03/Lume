@@ -5,99 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animação simples para o menu */
+    .menu-slide {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-
-  <!-- Botão hambúrguer fixo no canto superior esquerdo -->
-  <div class="fixed top-4 left-4 z-50">
-    <button id="menuBtn" class="p-2 rounded bg-white shadow hover:bg-purple-100">
-      <!-- Ícone de três linhas estilo hambúrguer -->
-      <svg class="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
+<body class="bg-white text-gray-800 font-sans relative">
 
   <!-- Menu lateral -->
-  <div id="menuPanel" class="hidden fixed top-16 left-4 bg-white border border-gray-300 shadow-lg rounded-lg p-4 w-64 z-40">
-    <h2 class="text-xl font-semibold text-purple-700 mb-4">Categorias</h2>
-    <ul class="space-y-2">
-      <li><a href="#corpo" class="block text-gray-800 hover:text-purple-600">Corpo e Banho</a></li>
-      <li><a href="#cabelo" class="block text-gray-800 hover:text-purple-600">Cuidados com o Cabelo</a></li>
-      <li><a href="#depilacao" class="block text-gray-800 hover:text-purple-600">Depilação e Barbear</a></li>
-    </ul>
+  <div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full menu-slide z-50">
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-purple-700 mb-4">Categorias</h2>
+      <ul class="space-y-4">
+        <li><a href="#corpo" class="text-purple-600 hover:text-purple-800">Corpo e Banho</a></li>
+        <li><a href="#cabelo" class="text-purple-600 hover:text-purple-800">Cuidados com o Cabelo</a></li>
+        <li><a href="#depilacao" class="text-purple-600 hover:text-purple-800">Depilação e Barbear</a></li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Logo centralizada no topo -->
-  <header class="bg-white py-6 shadow text-center">
-    <img src="logo.png" alt="Logo Lume" class="h-24 mx-auto object-contain">
+  <!-- Botão de menu hambúrguer -->
+  <button id="menuBtn" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-2 rounded-lg shadow hover:bg-purple-700 focus:outline-none">
+    <!-- Ícone de hambúrguer -->
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Logo e cabeçalho -->
+  <header class="bg-white p-6 flex justify-center">
+    <img src="logo.png" alt="Logo Lume" class="h-20 object-contain">
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-10 bg-pink-100">
-    <h2 class="text-4xl font-semibold text-purple-700 mb-4">Produtos que Inspiram</h2>
-    <p class="text-gray-700 max-w-xl mx-auto">Seleção de produtos para juventude feminina – beleza, cuidado e estilo.</p>
+  <!-- Hero -->
+  <section class="text-center py-12 bg-pink-100">
+    <h2 class="text-4xl font-semibold mb-4 text-purple-700">Produtos para Jovens e Modernas</h2>
+    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">Descubra tendências que combinam com seu estilo e realce sua beleza com nossos produtos exclusivos de afiliados.</p>
+    <a href="#produtos" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
-  <!-- Seções de Produto -->
+  <!-- Produtos (exemplo de uma categoria) -->
   <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold text-purple-700 text-center mb-6">Corpo e Banho</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+    <!-- Adicione seus produtos aqui -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Produto -->
       <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-        <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Produto" class="w-full h-[400px] object-contain bg-white">
+        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Produto" class="w-full h-[400px] object-contain">
         <div class="p-4">
-          <h4 class="text-lg font-semibold text-purple-700 mb-2">Loção Hidratante</h4>
-          <p class="text-gray-600 mb-4">Pele macia e perfumada o dia todo.</p>
-          <a href="https://amzn.to/44astKK" target="_blank" class="block bg-purple-600 text-white text-center py-2 rounded hover:bg-purple-700">Ver na Amazon</a>
+          <h4 class="text-lg font-medium mb-2 text-purple-700">Produto de Exemplo</h4>
+          <p class="text-gray-600 mb-4">Descrição do produto que combina com o seu estilo.</p>
+          <a href="https://amzn.to/44astKK" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition block text-center">Ver na Amazon</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto bg-pink-50">
-    <h3 class="text-2xl font-semibold text-purple-700 text-center mb-6">Cuidados com o Cabelo</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Produto cabelo" class="w-full h-[400px] object-contain bg-white">
-        <div class="p-4">
-          <h4 class="text-lg font-semibold text-purple-700 mb-2">Máscara Kérastase</h4>
-          <p class="text-gray-600 mb-4">Hidratação profunda para cabelos sedosos.</p>
-          <a href="https://amzn.to/44astKK" target="_blank" class="block bg-purple-600 text-white text-center py-2 rounded hover:bg-purple-700">Ver na Amazon</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="depilacao" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold text-purple-700 text-center mb-6">Depilação e Barbear</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/400x400?text=Depilador" alt="Depilador" class="w-full h-[400px] object-contain bg-white">
-        <div class="p-4">
-          <h4 class="text-lg font-semibold text-purple-700 mb-2">Depilador Elétrico</h4>
-          <p class="text-gray-600 mb-4">Prático e eficaz para o dia a dia.</p>
-          <a href="#" class="block bg-purple-600 text-white text-center py-2 rounded hover:bg-purple-700">Ver na Amazon</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="py-6 text-center text-gray-600 border-t">
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-600 border-t mt-12">
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script do menu -->
+  <!-- Script para abrir/fechar o menu -->
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menuPanel = document.getElementById('menuPanel');
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    let isOpen = false;
 
-    menuBtn.addEventListener('click', () => {
-      menuPanel.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menuPanel.contains(e.target) && !menuBtn.contains(e.target)) {
-        menuPanel.classList.add('hidden');
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      if (isOpen) {
+        menu.classList.remove("-translate-x-full");
+      } else {
+        menu.classList.add("-translate-x-full");
       }
     });
   </script>
