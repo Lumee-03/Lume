@@ -6,7 +6,6 @@
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Esconde as imagens que não estão ativas */
     .hidden-slide {
       display: none;
     }
@@ -21,26 +20,22 @@
     </div>
   </header>
 
-  <!-- Hero Section com Carrossel -->
+  <!-- Carrossel de Produto -->
   <section class="text-center py-12 px-4 max-w-4xl mx-auto">
     <h2 class="text-3xl font-semibold mb-4 text-purple-700">Produto em Destaque</h2>
-    <div class="relative overflow-hidden rounded-lg shadow-lg max-w-2xl mx-auto">
+
+    <div class="relative w-full max-w-md mx-auto aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center">
       <!-- Slides -->
-      <div id="carousel" class="relative w-full">
-        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="carousel-slide w-full h-auto object-contain" />
-        <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="carousel-slide w-full h-auto object-contain hidden-slide" />
+      <div id="carousel" class="relative w-full h-full">
+        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="carousel-slide absolute w-full h-full object-contain p-4" />
+        <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="carousel-slide absolute w-full h-full object-contain p-4 hidden-slide" />
       </div>
-      
-      <!-- Botões de navegação -->
-      <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
-        <button onclick="previousSlide()" class="bg-white bg-opacity-70 px-2 py-1 rounded-r shadow">⟨</button>
-      </div>
-      <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
-        <button onclick="nextSlide()" class="bg-white bg-opacity-70 px-2 py-1 rounded-l shadow">⟩</button>
-      </div>
+
+      <!-- Botões -->
+      <button onclick="previousSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 px-2 py-1 rounded-r">⟨</button>
+      <button onclick="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 px-2 py-1 rounded-l">⟩</button>
     </div>
 
-    <!-- Botão de compra -->
     <a href="https://amzn.to/44astKK?tag=043135621-20" target="_blank" class="mt-6 inline-block bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">
       Comprar na Amazon
     </a>
@@ -51,7 +46,7 @@
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script para o carrossel -->
+  <!-- Script -->
   <script>
     const slides = document.querySelectorAll('.carousel-slide');
     let current = 0;
@@ -72,8 +67,8 @@
       showSlide(current);
     }
 
-    // Troca automática a cada 5 segundos
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 6000);
   </script>
+
 </body>
 </html>
