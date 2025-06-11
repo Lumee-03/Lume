@@ -33,10 +33,14 @@
       <div class="overflow-hidden rounded-lg shadow-lg">
         <!-- Slides -->
         <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + (slide - 1) * 100 + '%)'">
-          <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="w-full object-cover h-96 flex-shrink-0" />
-          <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="w-full object-cover h-96 flex-shrink-0" />
-        </div>
-      </div>
+  <div class="w-full flex-shrink-0 flex justify-center items-center bg-white">
+    <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Imagem 1" class="max-w-full h-auto" />
+  </div>
+  <div class="w-full flex-shrink-0 flex justify-center items-center bg-white">
+    <img src="51p11d-buWL._AC_SL1500_.jpg" alt="Imagem 2" class="max-w-full h-auto" />
+  </div>
+</div>
+
 
       <!-- Controles -->
       <div class="flex justify-center space-x-2 mt-4">
