@@ -2,107 +2,133 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .carousel img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      aspect-ratio: 1 / 1;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          spacing: {
+            '128': '32rem',
+          }
+        }
+      }
     }
-  </style>
+  </script>
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
   <!-- Menu Hamburguer -->
-  <div class="fixed top-4 left-4 z-50">
-    <button id="menuBtn" class="text-purple-600 focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+  <button id="menu-btn" class="fixed top-4 left-4 z-50 text-3xl focus:outline-none">
+    &#9776;
+  </button>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-purple-600 text-white transform -translate-x-full transition-transform duration-300 z-40">
+    <div class="p-6 text-xl font-semibold border-b border-purple-400">Categorias</div>
+    <ul class="p-4 space-y-4">
+      <li><a href="#corpo" class="block hover:text-orange-300">Corpo e Banho</a></li>
+      <li><a href="#cabelo" class="block hover:text-orange-300">Cuidados com o Cabelo</a></li>
+      <li><a href="#depilacao" class="block hover:text-orange-300">Depilação e Barbear</a></li>
+    </ul>
   </div>
 
-  <!-- Menu lateral -->
-  <div id="sideMenu" class="fixed top-0 left-0 h-full w-64 bg-white shadow transform -translate-x-full transition-transform duration-300 z-40">
-    <div class="p-6">
-      <h2 class="text-xl font-semibold mb-4">Categorias</h2>
-      <ul class="space-y-3">
-        <li><a href="#corpo-e-banho" class="text-purple-600 hover:underline">Corpo e Banho</a></li>
-        <li><a href="#cuidados-cabelo" class="text-purple-600 hover:underline">Cuidados com o Cabelo</a></li>
-        <li><a href="#depilacao" class="text-purple-600 hover:underline">Depilação e Barbear</a></li>
-      </ul>
-    </div>
-  </div>
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-30"></div>
 
   <script>
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('sideMenu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('-translate-x-full');
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
     });
   </script>
 
-  <!-- Seção: Corpo e Banho -->
-  <section id="corpo-e-banho" class="py-12 px-4 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-semibold text-purple-700 mb-8 text-center">Corpo e Banho</h2>
+  <!-- Seção de Produtos Corpo e Banho -->
+  <section id="corpo" class="py-16 px-4 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-purple-700 mb-12 text-center">Corpo e Banho</h2>
+    <div class="grid md:grid-cols-2 gap-10">
 
-    <!-- Produto 1 -->
-    <div class="mb-16">
-      <div class="border rounded-lg shadow overflow-hidden">
-        <!-- Carrossel -->
-        <div class="relative carousel">
-          <img id="niveaSlide" src="nivea1.jpg" alt="NIVEA Sabonete" class="aspect-square">
-          <button onclick="changeNivea(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1">❮</button>
-          <button onclick="changeNivea(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1">❯</button>
+      <!-- Produto 1 -->
+      <div class="border rounded-lg shadow p-4">
+        <div class="relative overflow-hidden">
+          <div class="carousel relative w-full aspect-square">
+            <div class="carousel-images relative w-full h-80 overflow-hidden">
+              <img src="nivea1.png" alt="NIVEA 1" class="w-full h-full object-contain hidden block">
+              <img src="nivea2.png" alt="NIVEA 2" class="w-full h-full object-contain hidden">
+              <img src="nivea3.png" alt="NIVEA 3" class="w-full h-full object-contain hidden">
+              <img src="nivea4.png" alt="NIVEA 4" class="w-full h-full object-contain hidden">
+              <img src="nivea5.png" alt="NIVEA 5" class="w-full h-full object-contain hidden">
+              <img src="nivea6.png" alt="NIVEA 6" class="w-full h-full object-contain hidden">
+              <img src="nivea7.png" alt="NIVEA 7" class="w-full h-full object-contain hidden">
+              <img src="nivea8.png" alt="NIVEA 8" class="w-full h-full object-contain hidden">
+              <img src="nivea9.png" alt="NIVEA 9" class="w-full h-full object-contain hidden">
+            </div>
+            <button class="prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1 rounded">◀</button>
+            <button class="next absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1 rounded">▶</button>
+          </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-purple-700 mb-2">NIVEA Sabonete Líquido Óleo de Banho</h3>
-          <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
-          <a href="https://amzn.to/3HxDjSt" class="block bg-purple-600 text-white text-center px-4 py-2 rounded hover:bg-purple-700">Ver Produto</a>
-        </div>
+        <h3 class="text-xl font-semibold mt-4">NIVEA Sabonete Líquido Óleo de Banho</h3>
+        <p class="text-gray-600 mt-2 mb-4">Com 55% de óleos naturais, proporciona hidratação intensa e cuidado com a pele.</p>
+        <a href="https://amzn.to/3HxDjSt" class="block text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition">Ver Produto</a>
       </div>
-    </div>
 
-    <!-- Produto 2 -->
-    <div class="mb-16">
-      <div class="border rounded-lg shadow overflow-hidden">
-        <!-- Carrossel -->
-        <div class="relative carousel">
-          <img id="ceraveSlide" src="cerave1.jpg" alt="CeraVe Loção" class="aspect-square">
-          <button onclick="changeCerave(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1">❮</button>
-          <button onclick="changeCerave(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1">❯</button>
+      <!-- Produto 2 -->
+      <div class="border rounded-lg shadow p-4">
+        <div class="relative overflow-hidden">
+          <div class="carousel relative w-full aspect-square">
+            <div class="carousel-images relative w-full h-80 overflow-hidden">
+              <img src="cerave1.png" alt="CeraVe 1" class="w-full h-full object-contain hidden block">
+              <img src="cerave2.png" alt="CeraVe 2" class="w-full h-full object-contain hidden">
+              <img src="cerave3.png" alt="CeraVe 3" class="w-full h-full object-contain hidden">
+              <img src="cerave4.png" alt="CeraVe 4" class="w-full h-full object-contain hidden">
+              <img src="cerave5.png" alt="CeraVe 5" class="w-full h-full object-contain hidden">
+              <img src="cerave6.png" alt="CeraVe 6" class="w-full h-full object-contain hidden">
+              <img src="cerave7.png" alt="CeraVe 7" class="w-full h-full object-contain hidden">
+            </div>
+            <button class="prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1 rounded">◀</button>
+            <button class="next absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white px-2 py-1 rounded">▶</button>
+          </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-xl font-bold text-purple-700 mb-2">CeraVe Loção Hidratante Corporal</h3>
-          <p class="text-gray-600 mb-4">Loção com textura fluida e ácido hialurônico, ideal para hidratação profunda e duradoura da pele.</p>
-          <a href="https://amzn.to/43XFmqa" class="block bg-purple-600 text-white text-center px-4 py-2 rounded hover:bg-purple-700">Ver Produto</a>
-        </div>
+        <h3 class="text-xl font-semibold mt-4">CeraVe Loção Hidratante Corporal</h3>
+        <p class="text-gray-600 mt-2 mb-4">Textura fluida com ácido hialurônico para hidratação eficaz da pele.</p>
+        <a href="https://amzn.to/43XFmqa" class="block text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition">Ver Produto</a>
       </div>
+
     </div>
   </section>
 
   <script>
-    const niveaImages = [
-      'nivea1.jpg','nivea2.jpg','nivea3.jpg','nivea4.jpg','nivea5.jpg','nivea6.jpg','nivea7.jpg','nivea8.jpg','nivea9.jpg'
-    ];
-    let niveaIndex = 0;
-    function changeNivea(n) {
-      niveaIndex = (niveaIndex + n + niveaImages.length) % niveaImages.length;
-      document.getElementById('niveaSlide').src = niveaImages[niveaIndex];
-    }
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const images = carousel.querySelectorAll('img');
+      let current = 0;
 
-    const ceraveImages = [
-      'cerave1.jpg','cerave2.jpg','cerave3.jpg','cerave4.jpg','cerave5.jpg','cerave6.jpg','cerave7.jpg'
-    ];
-    let ceraveIndex = 0;
-    function changeCerave(n) {
-      ceraveIndex = (ceraveIndex + n + ceraveImages.length) % ceraveImages.length;
-      document.getElementById('ceraveSlide').src = ceraveImages[ceraveIndex];
-    }
+      function show(index) {
+        images.forEach((img, i) => img.classList.toggle('block', i === index));
+        images.forEach((img, i) => img.classList.toggle('hidden', i !== index));
+      }
+
+      carousel.querySelector('.next').addEventListener('click', () => {
+        current = (current + 1) % images.length;
+        show(current);
+      });
+
+      carousel.querySelector('.prev').addEventListener('click', () => {
+        current = (current - 1 + images.length) % images.length;
+        show(current);
+      });
+
+      show(current);
+    });
   </script>
-
 </body>
 </html>
