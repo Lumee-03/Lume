@@ -131,6 +131,31 @@
       ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
       showCeraveImage(ceraveIndex);
     }
+
+    //Carrossel  loreal
+  const lorealImages = [
+    'loreal1.jpg', 'loreal2.jpg', 'loreal3.jpg', 'loreal4.jpg',
+    'loreal5.jpg', 'loreal6.jpg', 'loreal7.jpg'
+  ];
+
+  let lorealIndex = 0;
+  const lorealImageElement = document.getElementById("lorealCarouselImage");
+
+  function showLorealImage(index) {
+    lorealImageElement.src = lorealImages[index];
+  }
+
+  function nextLorealImage() {
+    lorealIndex = (lorealIndex + 1) % lorealImages.length;
+    showLorealImage(lorealIndex);
+  }
+
+  function prevLorealImage() {
+    lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
+    showLorealImage(lorealIndex);
+  }
+    
+</script>
   </script>
 
   <!-- Seções vazias -->
