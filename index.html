@@ -102,40 +102,7 @@
     currentIndex = (currentIndex - 1 + niveaImages.length) % niveaImages.length;
     showImage(currentIndex);
   }
-  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
-  <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-    <!-- Produto: NIVEA -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="niveaCarouselImage" src="nivea1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
-        <button onclick="prevNiveaImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
-        <button onclick="nextNiveaImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
-        <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
-        <a href="https://amzn.to/3HxDjSt" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
-      </div>
-    </div>
-
-    <!-- Produto: CeraVe -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="ceraveCarouselImage" src="cerave1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
-        <button onclick="prevCeraveImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
-        <button onclick="nextCeraveImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal com Ácido Hialurônico</h4>
-        <p class="text-gray-600 mb-4">Textura fluida, hidratação profunda com ácido hialurônico e ceramidas. Ideal para todos os tipos de pele.</p>
-        <a href="https://amzn.to/3HxDjSt" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
-      </div>
-    </div>
-
-  </div>
-</section>
+  
 
 <!-- Scripts dos carrosséis -->
 <script>
