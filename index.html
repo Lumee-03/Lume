@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lume</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+  <header class="flex items-center justify-between p-4 border-b">
+    <img src="logo.png" alt="Lume Logo" class="h-12">
+  </header>
+
+  <section id="corpo-e-banho" class="py-12 bg-pink-50 px-4 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Produto 1 - NIVEA -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <div class="relative w-full aspect-square overflow-hidden">
+          <div class="carousel nivea-carousel relative h-full w-full">
+            <img src="nivea1.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea2.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea3.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea4.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea5.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea6.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea7.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea8.jpg" class="w-full h-full object-contain hidden" />
+            <img src="nivea9.jpg" class="w-full h-full object-contain hidden" />
+            <button class="prev absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 p-2">&#10094;</button>
+            <button class="next absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 p-2">&#10095;</button>
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho</h4>
+          <p class="text-gray-600 mb-4">Com 55% de óleos naturais, espuma cremosa e hidratação intensa.</p>
+          <a href="https://amzn.to/3HxDjSt" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition block text-center">Ver Produto</a>
+        </div>
+      </div>
+
+      <!-- Produto 2 - CeraVe -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <div class="relative w-full aspect-square overflow-hidden">
+          <div class="carousel cerave-carousel relative h-full w-full">
+            <img src="cerave1.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave2.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave3.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave4.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave5.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave6.jpg" class="w-full h-full object-contain hidden" />
+            <img src="cerave7.jpg" class="w-full h-full object-contain hidden" />
+            <button class="prev absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 p-2">&#10094;</button>
+            <button class="next absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 p-2">&#10095;</button>
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
+          <p class="text-gray-600 mb-4">Textura fluida com ácido hialurônico para hidratação intensa.</p>
+          <a href="https://amzn.to/43XFmqa" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition block text-center">Ver Produto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const slides = carousel.querySelectorAll('img');
+      let currentIndex = 0;
+      slides[currentIndex].classList.remove('hidden');
+
+      carousel.querySelector('.next').addEventListener('click', () => {
+        slides[currentIndex].classList.add('hidden');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.remove('hidden');
+      });
+
+      carousel.querySelector('.prev').addEventListener('click', () => {
+        slides[currentIndex].classList.add('hidden');
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        slides[currentIndex].classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
