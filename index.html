@@ -170,11 +170,29 @@ window.prevMorteImage = function () {
   morteIndex = (morteIndex - 1 + morteImages.length) % morteImages.length;
   showMorteImage(morteIndex);
 };
+
+    // Carrossel L'Oréal Professionnel
+const lorealProImages = ['lorealpro1.jpg', 'lorealpro2.jpg', 'lorealpro3.jpg'];
+let lorealProIndex = 0;
+const lorealProImageElement = document.getElementById("lorealProCarouselImage");
+
+function showLorealProImage(index) {
+  lorealProImageElement.src = lorealProImages[index];
+}
+
+window.nextLorealProImage = function () {
+  lorealProIndex = (lorealProIndex + 1) % lorealProImages.length;
+  showLorealProImage(lorealProIndex);
+};
+
+window.prevLorealProImage = function () {
+  lorealProIndex = (lorealProIndex - 1 + lorealProImages.length) % lorealProImages.length;
+  showLorealProImage(lorealProIndex);
+};
     
   });
 
 
-    
 </script>
     
   <!-- Seções vazias -->
@@ -209,6 +227,23 @@ window.prevMorteImage = function () {
   <div class="p-4">
     <h4 class="text-lg font-medium mb-2 text-purple-700">Morte Súbita Máscara Super Hidratante 450g</h4>
     <p class="text-gray-600 mb-4">Da Lola Cosmetics, hidratação profunda e imediata para cabelos danificados. Restaura os fios e devolve brilho e maciez.</p>
+    <a href="https://amzn.to/3HxDjSt" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: L'Oréal Professionnel Óleo 10 em 1 -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="lorealProCarouselImage" src="lorealpro1.jpg" alt="L'Oréal Professionnel Óleo 10 em 1" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevLorealProImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextLorealProImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Óleo 10 em 1 Absolut Repair</h4>
+    <p class="text-gray-600 mb-4">Multi-benefícios para cabelos secos e danificados. Repara, dá brilho e nutre com Gold Quinoa e Proteínas.</p>
     <a href="https://amzn.to/3HxDjSt" target="_blank"
        class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
       Ver na Amazon
