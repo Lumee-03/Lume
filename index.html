@@ -9,112 +9,117 @@
     tailwind.config = {
       theme: {
         extend: {
-          aspectRatio: {
-            square: '1 / 1'
-          }
-        }
-      }
-    }
+          colors: {
+            primary: '#9333ea',
+            secondary: '#f3e8ff',
+          },
+        },
+      },
+    };
   </script>
 </head>
 <body class="bg-white text-gray-800 font-sans">
+
   <!-- Menu Hamburguer -->
   <div class="fixed top-4 left-4 z-50">
-    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    <button id="menu-toggle" class="focus:outline-none">
+      <svg class="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
       </svg>
     </button>
-    <div id="menu" class="hidden mt-2 bg-white shadow rounded p-4 space-y-2">
-      <a href="#corpo" class="block text-gray-700 hover:text-purple-500">Corpo e Banho</a>
-      <a href="#cabelo" class="block text-gray-700 hover:text-purple-500">Cuidados com o Cabelo</a>
-      <a href="#depilacao" class="block text-gray-700 hover:text-purple-500">Depilação e Aparelhos</a>
+    <div id="menu" class="hidden absolute mt-2 bg-white shadow-md rounded p-4 space-y-2">
+      <a href="#corpo" class="block text-purple-700 hover:text-purple-900">Corpo e Banho</a>
+      <a href="#cabelos" class="block text-purple-700 hover:text-purple-900">Cuidados com o Cabelo</a>
+      <a href="#depilacao" class="block text-purple-700 hover:text-purple-900">Depilação e Barbear</a>
     </div>
   </div>
 
   <script>
-    document.getElementById("menu-toggle").addEventListener("click", () => {
-      document.getElementById("menu").classList.toggle("hidden");
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('hidden');
     });
   </script>
 
-  <!-- Seção Corpo e Banho -->
-  <section id="corpo" class="py-16 px-4 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-8 text-purple-700 text-center">Corpo e Banho</h2>
+  <!-- Hero Section -->
+  <section class="text-center py-16 bg-pink-100">
+    <h2 class="text-4xl font-semibold mb-4 text-purple-700">Lume</h2>
+    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">Descubra produtos que realçam sua beleza e cuidado com o corpo.</p>
+  </section>
 
-    <!-- Produto NIVEA -->
+  <!-- Corpo e Banho -->
+  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+
+    <!-- Produto 1 -->
     <div class="mb-12">
-      <div class="aspect-square overflow-hidden relative">
-        <div class="carousel-nivea relative w-full h-full">
-          <img src="nivea1.png" alt="NIVEA 1" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea2.png" alt="NIVEA 2" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea3.png" alt="NIVEA 3" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea4.png" alt="NIVEA 4" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea5.png" alt="NIVEA 5" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea6.png" alt="NIVEA 6" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea7.png" alt="NIVEA 7" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea8.png" alt="NIVEA 8" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="nivea9.png" alt="NIVEA 9" class="absolute inset-0 w-full h-full object-cover hidden">
-          <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 px-2 py-1 rounded prev">◀</button>
-          <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 px-2 py-1 rounded next">▶</button>
+      <h4 class="text-xl font-bold mb-2">NIVEA Sabonete Líquido Óleo de Banho</h4>
+      <div class="relative w-full max-w-md mx-auto">
+        <div id="nivea-carousel" class="overflow-hidden rounded shadow-md">
+          <img id="nivea-img" src="nivea1.png" alt="NIVEA Sabonete" class="w-full object-contain aspect-square">
+        </div>
+        <div class="flex justify-between mt-2">
+          <button onclick="prevSlide('nivea')" class="text-purple-600">&#8592;</button>
+          <button onclick="nextSlide('nivea')" class="text-purple-600">&#8594;</button>
         </div>
       </div>
-      <div class="mt-4">
-        <h3 class="text-xl font-semibold text-purple-700">NIVEA Sabonete Líquido Óleo de Banho</h3>
-        <p class="text-gray-600 mb-2">Com 55% de óleos naturais, espuma cremosa e hidratação intensa.</p>
-        <a href="https://amzn.to/3HxDjSt" target="_blank" class="inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
-      </div>
+      <p class="mt-4 text-gray-600">Com 55% de óleos naturais, proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
+      <a href="https://amzn.to/3HxDjSt" target="_blank" class="block mt-2 text-center text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600">Ver Produto</a>
     </div>
 
-    <!-- Produto CeraVe -->
+    <!-- Produto 2 -->
     <div class="mb-12">
-      <div class="aspect-square overflow-hidden relative">
-        <div class="carousel-cerave relative w-full h-full">
-          <img src="cerave1.png" alt="CeraVe 1" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave2.png" alt="CeraVe 2" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave3.png" alt="CeraVe 3" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave4.png" alt="CeraVe 4" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave5.png" alt="CeraVe 5" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave6.png" alt="CeraVe 6" class="absolute inset-0 w-full h-full object-cover hidden">
-          <img src="cerave7.png" alt="CeraVe 7" class="absolute inset-0 w-full h-full object-cover hidden">
-          <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 px-2 py-1 rounded prev">◀</button>
-          <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 px-2 py-1 rounded next">▶</button>
+      <h4 class="text-xl font-bold mb-2">CeraVe Loção Hidratante Corporal</h4>
+      <div class="relative w-full max-w-md mx-auto">
+        <div id="cerave-carousel" class="overflow-hidden rounded shadow-md">
+          <img id="cerave-img" src="cerave1.png" alt="CeraVe Loção" class="w-full object-contain aspect-square">
+        </div>
+        <div class="flex justify-between mt-2">
+          <button onclick="prevSlide('cerave')" class="text-purple-600">&#8592;</button>
+          <button onclick="nextSlide('cerave')" class="text-purple-600">&#8594;</button>
         </div>
       </div>
-      <div class="mt-4">
-        <h3 class="text-xl font-semibold text-purple-700">CeraVe Loção Hidratante Corporal</h3>
-        <p class="text-gray-600 mb-2">Com textura fluida e ácido hialurônico para hidratação profunda.</p>
-        <a href="https://amzn.to/43XFmqa" target="_blank" class="inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
-      </div>
+      <p class="mt-4 text-gray-600">Textura fluida com Ácido Hialurônico para uma hidratação profunda.</p>
+      <a href="https://amzn.to/43XFmqa" target="_blank" class="block mt-2 text-center text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600">Ver Produto</a>
     </div>
   </section>
 
+  <!-- Scripts do carrossel -->
   <script>
-    function initCarousel(selector) {
-      const container = document.querySelector(selector);
-      const images = container.querySelectorAll("img");
-      let current = 0;
+    const niveaImages = ['nivea1.png','nivea2.png','nivea3.png','nivea4.png','nivea5.png','nivea6.png','nivea7.png','nivea8.png','nivea9.png'];
+    const ceraveImages = ['cerave1.png','cerave2.png','cerave3.png','cerave4.png','cerave5.png','cerave6.png','cerave7.png'];
+    let niveaIndex = 0;
+    let ceraveIndex = 0;
 
-      function showImage(index) {
-        images.forEach((img, i) => {
-          img.classList.toggle("hidden", i !== index);
-        });
-      }
-
-      container.querySelector(".prev").addEventListener("click", () => {
-        current = (current - 1 + images.length) % images.length;
-        showImage(current);
-      });
-      container.querySelector(".next").addEventListener("click", () => {
-        current = (current + 1) % images.length;
-        showImage(current);
-      });
-
-      showImage(current);
+    function updateImage(id, images, index) {
+      document.getElementById(`${id}-img`).src = images[index];
     }
 
-    initCarousel(".carousel-nivea");
-    initCarousel(".carousel-cerave");
+    function nextSlide(id) {
+      if (id === 'nivea') {
+        niveaIndex = (niveaIndex + 1) % niveaImages.length;
+        updateImage('nivea', niveaImages, niveaIndex);
+      } else if (id === 'cerave') {
+        ceraveIndex = (ceraveIndex + 1) % ceraveImages.length;
+        updateImage('cerave', ceraveImages, ceraveIndex);
+      }
+    }
+
+    function prevSlide(id) {
+      if (id === 'nivea') {
+        niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
+        updateImage('nivea', niveaImages, niveaIndex);
+      } else if (id === 'cerave') {
+        ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
+        updateImage('cerave', ceraveImages, ceraveIndex);
+      }
+    }
   </script>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-600 border-t">
+    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
