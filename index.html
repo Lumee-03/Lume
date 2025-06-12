@@ -94,6 +94,7 @@
 
   <!-- Scripts dos carrosséis -->
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
     // Carrossel NIVEA
     const niveaImages = ['nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg', 'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'];
     let niveaIndex = 0;
@@ -103,15 +104,15 @@
       niveaImageElement.src = niveaImages[index];
     }
 
-    function nextNiveaImage() {
+    window.nextNiveaImage = function () {
       niveaIndex = (niveaIndex + 1) % niveaImages.length;
       showNiveaImage(niveaIndex);
-    }
+    };
 
-    function prevNiveaImage() {
+    window.prevNiveaImage = function () {
       niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
       showNiveaImage(niveaIndex);
-    }
+    };
 
     // Carrossel CeraVe
     const ceraveImages = ['cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg', 'cerave6.jpg', 'cerave7.jpg'];
@@ -122,44 +123,37 @@
       ceraveImageElement.src = ceraveImages[index];
     }
 
-    function nextCeraveImage() {
+    window.nextCeraveImage = function () {
       ceraveIndex = (ceraveIndex + 1) % ceraveImages.length;
       showCeraveImage(ceraveIndex);
-    }
+    };
 
-    function prevCeraveImage() {
+    window.prevCeraveImage = function () {
       ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
       showCeraveImage(ceraveIndex);
+    };
+
+    // Carrossel L'Oréal
+    const lorealImages = ['loreal1.jpg', 'loreal2.jpg', 'loreal3.jpg', 'loreal4.jpg', 'loreal5.jpg', 'loreal6.jpg', 'loreal7.jpg'];
+    let lorealIndex = 0;
+    const lorealImageElement = document.getElementById("lorealCarouselImage");
+
+    function showLorealImage(index) {
+      lorealImageElement.src = lorealImages[index];
     }
 
-<!-- Carrossel: L'Oréal Elseve -->
-<script>
-  const lorealImages = [
-    'loreal1.jpg', 'loreal2.jpg', 'loreal3.jpg', 'loreal4.jpg',
-    'loreal5.jpg', 'loreal6.jpg', 'loreal7.jpg'
-  ];
+    window.nextLorealImage = function () {
+      lorealIndex = (lorealIndex + 1) % lorealImages.length;
+      showLorealImage(lorealIndex);
+    };
 
-  let lorealIndex = 0;
-  const lorealImageElement = document.getElementById("lorealCarouselImage");
-
-  function showLorealImage(index) {
-    lorealImageElement.src = lorealImages[index];
-  }
-
-  function nextLorealImage() {
-    lorealIndex = (lorealIndex + 1) % lorealImages.length;
-    showLorealImage(lorealIndex);
-  }
-
-  function prevLorealImage() {
-    lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
-    showLorealImage(lorealIndex);
-  }
+    window.prevLorealImage = function () {
+      lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
+      showLorealImage(lorealIndex);
+    };
+  });
 </script>
     
-</script>
-  </script>
-
   <!-- Seções vazias -->
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
