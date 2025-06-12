@@ -105,6 +105,45 @@
 </script>
   </div>
 </section>
+   <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe, Loção Hidratante Corporal, com textura Fluida e Ácido Hialurônico</h4>
+        <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
+        <a href="https://amzn.to/3HxDjSt" target="_blank"
+   class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+   Ver na Amazon
+</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Script do carrossel -->
+<script>
+  const niveaImages = [
+    'cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg',
+    'cerave6.jpg', 'cerave7.jpg'
+  ];
+
+  let currentIndex = 0;
+  const imageElement = document.getElementById("ceraveCarouselImage");
+
+  function showImage(index) {
+    imageElement.src = ceraveImages[index];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % ceraveImages.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + ceraveImages.length) % ceraveImages.length;
+    showImage(currentIndex);
+  }
+</script>
+  </div>
+</section>
   </section>
 
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
