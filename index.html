@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <!-- Botão hambúrguer no canto superior esquerdo -->
+  <!-- Botão hambúrguer -->
   <button id="menuBtn" aria-label="Abrir menu" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
       <path fill-rule="evenodd" d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z" clip-rule="evenodd" />
@@ -44,112 +44,84 @@
     <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
-  <!-- Seções de categorias (sem produtos) -->
- <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
-  <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    
-    <!-- Produto com carrossel -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-      
-      <!-- Carrossel de imagens -->
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="niveaCarouselImage" src="nivea1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
+  <!-- Seção Corpo e Banho com 2 produtos -->
+  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-        <!-- Botões de navegação -->
-        <button onclick="prevImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">
-          &#10094;
-        </button>
-        <button onclick="nextImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">
-          &#10095;
-        </button>
+      <!-- Produto: NIVEA -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <div class="relative w-full h-64 bg-gray-100">
+          <img id="niveaCarouselImage" src="nivea1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
+          <button onclick="prevNiveaImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+          <button onclick="nextNiveaImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
+          <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
+          <a href="https://amzn.to/3HxDjSt" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+        </div>
       </div>
 
-      <!-- Conteúdo do produto -->
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
-        <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
-        <a href="https://amzn.to/3HxDjSt" target="_blank"
-   class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
-   Ver na Amazon
-</a>
+      <!-- Produto: CeraVe -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <div class="relative w-full h-64 bg-gray-100">
+          <img id="ceraveCarouselImage" src="cerave1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
+          <button onclick="prevCeraveImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+          <button onclick="nextCeraveImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal com Ácido Hialurônico</h4>
+          <p class="text-gray-600 mb-4">Textura fluida, hidratação profunda com ácido hialurônico e ceramidas. Ideal para todos os tipos de pele.</p>
+          <a href="https://amzn.to/3HxDjSt" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+        </div>
       </div>
+
     </div>
-
-  </div>
-</section>
-
-<!-- Script do carrossel -->
-<script>
-  const niveaImages = [
-    'nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg',
-    'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'
-  ];
-
-  let currentIndex = 0;
-  const imageElement = document.getElementById("niveaCarouselImage");
-
-  function showImage(index) {
-    imageElement.src = niveaImages[index];
-  }
-
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % niveaImages.length;
-    showImage(currentIndex);
-  }
-
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + niveaImages.length) % niveaImages.length;
-    showImage(currentIndex);
-  }
-  
-
-<!-- Scripts dos carrosséis -->
-<script>
-  // Carrossel NIVEA
-  const niveaImages = ['nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg', 'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'];
-  let niveaIndex = 0;
-  const niveaImageElement = document.getElementById("niveaCarouselImage");
-
-  function showNiveaImage(index) {
-    niveaImageElement.src = niveaImages[index];
-  }
-
-  function nextNiveaImage() {
-    niveaIndex = (niveaIndex + 1) % niveaImages.length;
-    showNiveaImage(niveaIndex);
-  }
-
-  function prevNiveaImage() {
-    niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
-    showNiveaImage(niveaIndex);
-  }
-
-  // Carrossel CeraVe
-  const ceraveImages = ['cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg', 'cerave6.jpg', 'cerave7.jpg'];
-  let ceraveIndex = 0;
-  const ceraveImageElement = document.getElementById("ceraveCarouselImage");
-
-  function showCeraveImage(index) {
-    ceraveImageElement.src = ceraveImages[index];
-  }
-
-  function nextCeraveImage() {
-    ceraveIndex = (ceraveIndex + 1) % ceraveImages.length;
-    showCeraveImage(ceraveIndex);
-  }
-
-  function prevCeraveImage() {
-    ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
-    showCeraveImage(ceraveIndex);
-  }
-</script>
-</script>
-  </div>
-</section>
-  
   </section>
 
+  <!-- Scripts dos carrosséis -->
+  <script>
+    // Carrossel NIVEA
+    const niveaImages = ['nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg', 'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'];
+    let niveaIndex = 0;
+    const niveaImageElement = document.getElementById("niveaCarouselImage");
+
+    function showNiveaImage(index) {
+      niveaImageElement.src = niveaImages[index];
+    }
+
+    function nextNiveaImage() {
+      niveaIndex = (niveaIndex + 1) % niveaImages.length;
+      showNiveaImage(niveaIndex);
+    }
+
+    function prevNiveaImage() {
+      niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
+      showNiveaImage(niveaIndex);
+    }
+
+    // Carrossel CeraVe
+    const ceraveImages = ['cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg', 'cerave6.jpg', 'cerave7.jpg'];
+    let ceraveIndex = 0;
+    const ceraveImageElement = document.getElementById("ceraveCarouselImage");
+
+    function showCeraveImage(index) {
+      ceraveImageElement.src = ceraveImages[index];
+    }
+
+    function nextCeraveImage() {
+      ceraveIndex = (ceraveIndex + 1) % ceraveImages.length;
+      showCeraveImage(ceraveIndex);
+    }
+
+    function prevCeraveImage() {
+      ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
+      showCeraveImage(ceraveIndex);
+    }
+  </script>
+
+  <!-- Seções vazias -->
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -169,7 +141,7 @@
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script para abrir/fechar menu -->
+  <!-- Script do menu -->
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
@@ -178,11 +150,7 @@
 
     menuBtn.addEventListener("click", () => {
       isOpen = !isOpen;
-      if (isOpen) {
-        menu.classList.remove("-translate-x-full");
-      } else {
-        menu.classList.add("-translate-x-full");
-      }
+      menu.classList.toggle("-translate-x-full", !isOpen);
     });
 
     menuLinks.forEach(link => {
