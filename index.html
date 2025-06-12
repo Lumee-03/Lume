@@ -2,101 +2,141 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* Carrossel manual */
     .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
     }
-    .carousel img {
-      scroll-snap-align: center;
-      flex: 0 0 auto;
-      max-height: 300px;
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
       object-fit: contain;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .carousel-button.prev {
+      left: 10px;
+    }
+    .carousel-button.next {
+      right: 10px;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Botão hamburguer flutuante -->
-  <div class="fixed top-4 left-4 z-50">
-    <button onclick="document.getElementById('menu').classList.toggle('hidden')" class="text-purple-600 focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
+  <!-- Header -->
+  <header class="bg-purple-500 text-white p-4 flex items-center justify-between">
+    <button id="menu-button" class="text-white text-2xl ml-2 focus:outline-none">
+      <i class="fas fa-bars"></i>
     </button>
-  </div>
-
-  <!-- Menu lateral -->
-  <div id="menu" class="hidden fixed top-0 left-0 bg-white shadow-lg w-64 h-full p-6 z-40">
-    <h2 class="text-xl font-bold text-purple-700 mb-4">Categorias</h2>
-    <ul class="space-y-3">
-      <li><a href="#corpo" class="text-gray-700 hover:text-purple-500">Corpo e Banho</a></li>
-      <li><a href="#cabelo" class="text-gray-700 hover:text-purple-500">Cuidados com o Cabelo</a></li>
-      <li><a href="#depilacao" class="text-gray-700 hover:text-purple-500">Depilação</a></li>
-    </ul>
-  </div>
-
-  <!-- Cabeçalho com logo -->
-  <header class="bg-purple-500 text-white p-4 pl-20">
-    <div class="max-w-6xl mx-auto flex items-center">
-      <img src="logo.png" alt="Logo Lume" class="h-20">
-    </div>
+    <img src="logo.png" alt="Lume Logo" class="h-16 mx-auto">
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-12 bg-pink-100">
-    <h2 class="text-4xl font-semibold mb-2 text-purple-700">Produtos para Jovens e Modernas</h2>
-    <p class="text-lg text-gray-700 mb-4 max-w-xl mx-auto">Descubra tendências que combinam com seu estilo e realce sua beleza com nossos produtos exclusivos de afiliados.</p>
-    <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
-  </section>
+  <!-- Sidebar Menu -->
+  <aside id="sidebar" class="fixed top-0 left-0 w-64 bg-white shadow h-full transform -translate-x-full transition-transform duration-300 z-50">
+    <div class="p-4 border-b font-bold text-purple-600 text-xl">Categorias</div>
+    <ul class="p-4 space-y-2">
+      <li><a href="#corpo" class="block text-gray-700 hover:text-purple-500">Corpo e Banho</a></li>
+      <li><a href="#cabelo" class="block text-gray-700 hover:text-purple-500">Cuidados com o Cabelo</a></li>
+      <li><a href="#depilacao" class="block text-gray-700 hover:text-purple-500">Depilação</a></li>
+    </ul>
+  </aside>
 
-  <!-- Corpo e Banho -->
-  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-purple-700 text-center">Corpo e Banho</h3>
+  <main class="p-4 pt-6 max-w-4xl mx-auto">
+    <!-- Corpo e Banho -->
+    <section id="corpo" class="mb-12">
+      <h2 class="text-2xl font-semibold text-purple-700 mb-4">Corpo e Banho</h2>
 
-    <!-- Produto 1 - NIVEA -->
-    <div class="mb-10 border rounded-lg shadow p-6">
-      <div class="carousel space-x-4 overflow-x-auto">
-        <img src="nivea1.jpg" alt="NIVEA">
-        <img src="nivea2.jpg" alt="NIVEA">
-        <img src="nivea3.jpg" alt="NIVEA">
-        <img src="nivea4.jpg" alt="NIVEA">
-        <img src="nivea5.jpg" alt="NIVEA">
-        <img src="nivea6.jpg" alt="NIVEA">
-        <img src="nivea7.jpg" alt="NIVEA">
-        <img src="nivea8.jpg" alt="NIVEA">
-        <img src="nivea9.jpg" alt="NIVEA">
+      <!-- Produto 1 -->
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2">NIVEA Sabonete Líquido Óleo de Banho</h3>
+        <div class="carousel relative">
+          <button class="carousel-button prev" onclick="prevSlide('nivea')">&#10094;</button>
+          <div class="carousel-images" id="nivea-carousel">
+            <img src="nivea1.jpg" alt="NIVEA 1">
+            <img src="nivea2.jpg" alt="NIVEA 2">
+            <img src="nivea3.jpg" alt="NIVEA 3">
+            <img src="nivea4.jpg" alt="NIVEA 4">
+            <img src="nivea5.jpg" alt="NIVEA 5">
+            <img src="nivea6.jpg" alt="NIVEA 6">
+            <img src="nivea7.jpg" alt="NIVEA 7">
+            <img src="nivea8.jpg" alt="NIVEA 8">
+            <img src="nivea9.jpg" alt="NIVEA 9">
+          </div>
+          <button class="carousel-button next" onclick="nextSlide('nivea')">&#10095;</button>
+        </div>
+        <a href="https://amzn.to/3HxDjSt" class="mt-2 inline-block text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
       </div>
-      <h4 class="text-xl font-bold mt-4 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
-      <p class="text-gray-700 mt-2">Com 55% de óleos naturais, espuma cremosa, hidratação intensa e cuidado com a pele.</p>
-      <a href="https://amzn.to/3HxDjSt" class="mt-4 inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Comprar na Amazon</a>
-    </div>
 
-    <!-- Produto 2 - CeraVe -->
-    <div class="mb-10 border rounded-lg shadow p-6">
-      <div class="carousel space-x-4 overflow-x-auto">
-        <img src="cerave1.jpg" alt="CeraVe">
-        <img src="cerave2.jpg" alt="CeraVe">
-        <img src="cerave3.jpg" alt="CeraVe">
-        <img src="cerave4.jpg" alt="CeraVe">
-        <img src="cerave5.jpg" alt="CeraVe">
-        <img src="cerave6.jpg" alt="CeraVe">
-        <img src="cerave7.jpg" alt="CeraVe">
+      <!-- Produto 2 -->
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2">CeraVe Loção Hidratante Corporal</h3>
+        <div class="carousel relative">
+          <button class="carousel-button prev" onclick="prevSlide('cerave')">&#10094;</button>
+          <div class="carousel-images" id="cerave-carousel">
+            <img src="cerave1.jpg" alt="CeraVe 1">
+            <img src="cerave2.jpg" alt="CeraVe 2">
+            <img src="cerave3.jpg" alt="CeraVe 3">
+            <img src="cerave4.jpg" alt="CeraVe 4">
+            <img src="cerave5.jpg" alt="CeraVe 5">
+            <img src="cerave6.jpg" alt="CeraVe 6">
+            <img src="cerave7.jpg" alt="CeraVe 7">
+          </div>
+          <button class="carousel-button next" onclick="nextSlide('cerave')">&#10095;</button>
+        </div>
+        <a href="https://amzn.to/43XFmqa" class="mt-2 inline-block text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
       </div>
-      <h4 class="text-xl font-bold mt-4 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
-      <p class="text-gray-700 mt-2">Textura fluida com ácido hialurônico para hidratação profunda da pele.</p>
-      <a href="https://amzn.to/43XFmqa" class="mt-4 inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Comprar na Amazon</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Rodapé -->
-  <footer class="py-6 text-center text-gray-600 border-t">
-    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
-  </footer>
+  <script>
+    const carousels = {
+      nivea: 0,
+      cerave: 0
+    };
+
+    function updateCarousel(id) {
+      const carousel = document.getElementById(`${id}-carousel`);
+      const index = carousels[id];
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide(id) {
+      const total = document.querySelectorAll(`#${id}-carousel img`).length;
+      carousels[id] = (carousels[id] + 1) % total;
+      updateCarousel(id);
+    }
+
+    function prevSlide(id) {
+      const total = document.querySelectorAll(`#${id}-carousel img`).length;
+      carousels[id] = (carousels[id] - 1 + total) % total;
+      updateCarousel(id);
+    }
+
+    // Menu toggle
+    const menuButton = document.getElementById("menu-button");
+    const sidebar = document.getElementById("sidebar");
+    menuButton.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+    });
+  </script>
 </body>
 </html>
