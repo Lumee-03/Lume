@@ -6,6 +6,7 @@
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Animação simples para o menu */
     .menu-slide {
       transition: transform 0.3s ease-in-out;
     }
@@ -25,14 +26,15 @@
     </div>
   </div>
 
-  <!-- Botão hambúrguer no canto superior esquerdo -->
-  <button id="menuBtn" aria-label="Abrir menu" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+  <!-- Botão de menu hambúrguer no canto superior esquerdo -->
+  <button id="menuBtn" aria-label="Abrir menu" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none transform transition-transform duration-200 hover:scale-110">
+    <!-- Ícone de hambúrguer com três linhas sólidas -->
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
       <path fill-rule="evenodd" d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z" clip-rule="evenodd" />
     </svg>
   </button>
 
-  <!-- Logo -->
+  <!-- Logo e cabeçalho -->
   <header class="bg-white p-6 flex justify-center">
     <img src="logo.png" alt="Logo Lume" class="h-20 object-contain">
   </header>
@@ -44,48 +46,47 @@
     <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
-  <!-- Seções de categorias (sem produtos) -->
+  <!-- Produtos - Corpo e Banho -->
   <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Produtos virão aqui -->
+      
+      <!-- Produto de Exemplo -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <img src="81yxJNw9AlL._AC_SL1500_.jpg" alt="Produto de exemplo - Corpo e Banho" class="w-full h-[400px] object-contain">
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">Produto de Exemplo</h4>
+          <p class="text-gray-600 mb-4">Descrição do produto que combina com o seu estilo.</p>
+          <a href="https://amzn.to/44astKK" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition block text-center">Ver na Amazon</a>
+        </div>
+      </div>
+
+      <!-- Produto Nivea -->
+      <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+        <img src="https://m.media-amazon.com/images/I/61Vo4brsKyL._AC_SL1000_.jpg" alt="Sabonete Líquido Natural 200ml Nivea" class="w-full h-[400px] object-contain">
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">Sabonete Líquido Natural 200ml – Nivea</h4>
+          <p class="text-gray-600 mb-4">Hidratação suave e sensação refrescante para o corpo, com fórmula natural e dermatologicamente testada.</p>
+          <a href="https://www.amazon.com.br/dp/B00XDX9JJY?tag=043135621-20" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded hover:bg-purple-600 transition block text-center">Ver na Amazon</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Produtos virão aqui -->
-    </div>
-  </section>
-
-  <section id="depilacao" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Depilação e Barbear</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Produtos virão aqui -->
-    </div>
-  </section>
-
-  <!-- Rodapé -->
+  <!-- Footer -->
   <footer class="py-6 text-center text-gray-600 border-t mt-12">
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script para abrir/fechar menu -->
+  <!-- Script para abrir/fechar o menu -->
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
     const menuLinks = menu.querySelectorAll("a");
     let isOpen = false;
 
-    menuBtn.addEventListener("click", () => {
-      isOpen = !isOpen;
-      if (isOpen) {
-        menu.classList.remove("-translate-x-full");
-      } else {
-        menu.classList.add("-translate-x-full");
-      }
-    });
+    menuBtn.addEventListener("click", toggleMenu);
 
     menuLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -93,6 +94,15 @@
         menu.classList.add("-translate-x-full");
       });
     });
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+      if (isOpen) {
+        menu.classList.remove("-translate-x-full");
+      } else {
+        menu.classList.add("-translate-x-full");
+      }
+    }
   </script>
 
 </body>
