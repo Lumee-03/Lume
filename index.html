@@ -5,13 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
     .menu-slide {
       transition: transform 0.3s ease-in-out;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans relative">
+
+  <!-- Botão Voltar ao Topo -->
+  <button onclick="scrollToTop()" id="topBtn" class="hidden fixed bottom-5 right-5 z-50 bg-[#d946ef] text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition">
+    ↑
+  </button>
+
+  <!-- Seção de Depoimentos -->
+  <section class="py-12 bg-pink-50">
+    <h3 class="text-2xl font-semibold text-center text-purple-700 mb-6">O que dizem sobre nós</h3>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
+      <div class="bg-white p-4 rounded-lg shadow fade-in">"Amei os produtos! Chegaram super rápido e com qualidade incrível!"<br><span class="text-sm text-gray-500">— Marina, SP</span></div>
+      <div class="bg-white p-4 rounded-lg shadow fade-in">"Super fácil de navegar e comprar. Vou indicar para minhas amigas!"<br><span class="text-sm text-gray-500">— Julia, RJ</span></div>
+    </div>
+  </section>
+
+  <!-- Script para Fade-In e Voltar ao Topo -->
+  <script>
+    const topBtn = document.getElementById("topBtn");
+
+    window.onscroll = function () {
+      // Mostrar botão se passar de 300px
+      topBtn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
+
+      // Fade-in automático
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Botões de copiar link
+    function copiarLink(link) {
+      navigator.clipboard.writeText(link).then(() => {
+        alert("Link copiado!");
+      });
+    }
+  </script>
+
+  <!-- Exemplo de Botão Copiar Link do Produto -->
+  <div class="text-center my-10">
+    <button onclick="copiarLink('https://amzn.to/3HxDjSt')" class="bg-[#d946ef] text-white px-4 py-2 rounded-full shadow hover:bg-purple-600 transition">
+      Copiar link do produto
+    </button>
+  </div>
+
+</body>
+</html>
 
   <!-- Menu lateral -->
   <div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full menu-slide z-50">
