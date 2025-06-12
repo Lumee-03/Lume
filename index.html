@@ -151,9 +151,8 @@
       lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
       showLorealImage(lorealIndex);
     };
-  });
 
-// Carrossel Morte Súbita
+    // Carrossel Morte Súbita
 const morteImages = ['morte1.jpg', 'morte2.jpg', 'morte3.jpg', 'morte4.jpg','morte5.jpg', 'morte6.jpg', 'morte7.jpg'];
 let morteIndex = 0;
 const morteImageElement = document.getElementById("morteCarouselImage");
@@ -171,6 +170,10 @@ window.prevMorteImage = function () {
   morteIndex = (morteIndex - 1 + morteImages.length) % morteImages.length;
   showMorteImage(morteIndex);
 };
+    
+  });
+
+
     
 </script>
     
