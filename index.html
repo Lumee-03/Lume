@@ -176,6 +176,8 @@
   </div>
 </div>
 
+      
+
     </div>
   </section>
 
@@ -429,6 +431,67 @@ window.prevBepantolImage = function () {
   bepantolIndex = (bepantolIndex - 1 + bepantolImages.length) % bepantolImages.length;
   showBepantolImage(bepantolIndex);
 };
+
+    // Carrossel Rapunzel
+const rapunzelImages = [
+  'rapunzel1.jpg','rapunzel2.jpg','rapunzel3.jpg','rapunzel4.jpg','rapunzel5.jpg',
+  'rapunzel6.jpg','rapunzel7.jpg','rapunzel8.jpg','rapunzel9.jpg'
+];
+let rapunzelIndex = 0;
+const rapunzelImageElement = document.getElementById("rapunzelCarouselImage");
+
+function showRapunzelImage(index) {
+  rapunzelImageElement.src = rapunzelImages[index];
+}
+window.nextRapunzelImage = function () {
+  rapunzelIndex = (rapunzelIndex + 1) % rapunzelImages.length;
+  showRapunzelImage(rapunzelIndex);
+};
+window.prevRapunzelImage = function () {
+  rapunzelIndex = (rapunzelIndex - 1 + rapunzelImages.length) % rapunzelImages.length;
+  showRapunzelImage(rapunzelIndex);
+};
+
+// Carrossel Cicatri Renov
+const cicatriImages = [
+  'cicatri1.jpg','cicatri2.jpg','cicatri3.jpg','cicatri4.jpg',
+  'cicatri5.jpg','cicatri6.jpg','cicatri7.jpg','cicatri8.jpg'
+];
+let cicatriIndex = 0;
+const cicatriImageElement = document.getElementById("cicatriCarouselImage");
+
+function showCicatriImage(index) {
+  cicatriImageElement.src = cicatriImages[index];
+}
+window.nextCicatriImage = function () {
+  cicatriIndex = (cicatriIndex + 1) % cicatriImages.length;
+  showCicatriImage(cicatriIndex);
+};
+window.prevCicatriImage = function () {
+  cicatriIndex = (cicatriIndex - 1 + cicatriImages.length) % cicatriImages.length;
+  showCicatriImage(cicatriIndex);
+};
+
+// Carrossel Danos Vorazes
+const danosImages = [
+  'danos1.jpg','danos2.jpg','danos3.jpg','danos4.jpg',
+  'danos5.jpg','danos6.jpg','danos7.jpg'
+];
+let danosIndex = 0;
+const danosImageElement = document.getElementById("danosCarouselImage");
+
+function showDanosImage(index) {
+  danosImageElement.src = danosImages[index];
+}
+window.nextDanosImage = function () {
+  danosIndex = (danosIndex + 1) % danosImages.length;
+  showDanosImage(danosIndex);
+};
+window.prevDanosImage = function () {
+  danosIndex = (danosIndex - 1 + danosImages.length) % danosImages.length;
+  showDanosImage(danosIndex);
+};
+
     
   });
 
@@ -485,6 +548,57 @@ window.prevBepantolImage = function () {
     <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Óleo 10 em 1 Absolut Repair</h4>
     <p class="text-gray-600 mb-4">Multi-benefícios para cabelos secos e danificados. Repara, dá brilho e nutre com Gold Quinoa e Proteínas.</p>
     <a href="https://amzn.to/3HxDjSt" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Rapunzel Growth Tônico Capilar -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="rapunzelCarouselImage" src="rapunzel1.jpg" alt="Rapunzel Growth Tônico Capilar" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevRapunzelImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextRapunzelImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Rapunzel Growth Tônico Capilar 250ml</h4>
+    <p class="text-gray-600 mb-4">Estimula o crescimento capilar e fortalece os fios. Fórmula vegana da Lola Cosmetics.</p>
+    <a href="https://www.amazon.com.br/dp/B07VJXYTKT" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+<!-- Produto: Leave-In Cicatri Renov -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="cicatriCarouselImage" src="cicatri1.jpg" alt="Leave-In Cicatri Renov" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevCicatriImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextCicatriImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Leave-In Elseve Cicatri Renov 100ml</h4>
+    <p class="text-gray-600 mb-4">Reparação instantânea e proteção térmica para cabelos danificados.</p>
+    <a href="https://www.amazon.com.br/dp/B01M1GG4N7" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Danos Vorazes Óleo Reparador -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="danosCarouselImage" src="danos1.jpg" alt="Danos Vorazes Óleo Reparador" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevDanosImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextDanosImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Óleo Reparador Danos Vorazes 50ml</h4>
+    <p class="text-gray-600 mb-4">Restaura pontas duplas, dá brilho intenso e sela os fios. Fórmula Lola Cosmetics.</p>
+    <a href="https://www.amazon.com.br/dp/B0B59GN8G8" target="_blank"
        class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
       Ver na Amazon
     </a>
