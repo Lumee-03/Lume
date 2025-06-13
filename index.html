@@ -158,6 +158,23 @@
     <a href="https://amzn.to/4mYw45V" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
   </div>
 </div>
+      
+      <!-- Produto: Bepantol Derma Toque Seco -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="bepantolCarouselImage" src="bepantol1.jpg" alt="Bepantol Derma Toque Seco" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevBepantolImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextBepantolImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Bepantol Derma Toque Seco 30g</h4>
+    <p class="text-gray-600 mb-4">Oil Free, Hidratante facial e corporal. Ideal para peles sensíveis e secas. Textura leve e rápida absorção.</p>
+    <a href="https://amzn.to/3RrsuDf" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
 
     </div>
   </section>
@@ -386,6 +403,32 @@ const epidratImages = [
     mustelaIndex = (mustelaIndex - 1 + mustelaImages.length) % mustelaImages.length;
     showMustelaImage(mustelaIndex);
   };
+
+// Carrossel Bepantol Derma
+const bepantolImages = [
+  'bepantol1.jpg',
+  'bepantol2.jpg',
+  'bepantol3.jpg',
+  'bepantol4.jpg',
+  'bepantol5.jpg',
+  'bepantol6.jpg'
+];
+let bepantolIndex = 0;
+const bepantolImageElement = document.getElementById("bepantolCarouselImage");
+
+function showBepantolImage(index) {
+  bepantolImageElement.src = bepantolImages[index];
+}
+
+window.nextBepantolImage = function () {
+  bepantolIndex = (bepantolIndex + 1) % bepantolImages.length;
+  showBepantolImage(bepantolIndex);
+};
+
+window.prevBepantolImage = function () {
+  bepantolIndex = (bepantolIndex - 1 + bepantolImages.length) % bepantolImages.length;
+  showBepantolImage(bepantolIndex);
+};
     
   });
 
