@@ -74,6 +74,22 @@
   </div>
 </div>
 
+      <script>
+  function copiarLink(botao) {
+    const link = botao.getAttribute("data-link");
+    navigator.clipboard.writeText(link).then(() => {
+      const original = botao.innerHTML;
+      botao.innerHTML = '✔️';
+      setTimeout(() => {
+        botao.innerHTML = original;
+      }, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>
+
       <!-- Produto: CeraVe -->
       <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
         <div class="relative w-full h-64 bg-gray-100">
