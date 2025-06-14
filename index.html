@@ -491,7 +491,64 @@ window.prevDanosImage = function () {
   danosIndex = (danosIndex - 1 + danosImages.length) % danosImages.length;
   showDanosImage(danosIndex);
 };
+    
+// Carrossel Vichy
+const vichyImages = [
+  'vichy1.jpg','vichy2.jpg','vichy3.jpg','vichy4.jpg','vichy5.jpg',
+  'vichy6.jpg','vichy7.jpg','vichy8.jpg','vichy9.jpg','vichy10.jpg'
+];
+let vichyIndex = 0;
+const vichyImageElement = document.getElementById("vichyCarouselImage");
 
+function showVichyImage(index) {
+  vichyImageElement.src = vichyImages[index];
+}
+window.nextVichyImage = function () {
+  vichyIndex = (vichyIndex + 1) % vichyImages.length;
+  showVichyImage(vichyIndex);
+};
+window.prevVichyImage = function () {
+  vichyIndex = (vichyIndex - 1 + vichyImages.length) % vichyImages.length;
+  showVichyImage(vichyIndex);
+};
+
+// Carrossel Truss
+const trussImages = ['truss1.jpg','truss2.jpg','truss3.jpg','truss4.jpg'];
+let trussIndex = 0;
+const trussImageElement = document.getElementById("trussCarouselImage");
+
+function showTrussImage(index) {
+  trussImageElement.src = trussImages[index];
+}
+window.nextTrussImage = function () {
+  trussIndex = (trussIndex + 1) % trussImages.length;
+  showTrussImage(trussIndex);
+};
+window.prevTrussImage = function () {
+  trussIndex = (trussIndex - 1 + trussImages.length) % trussImages.length;
+  showTrussImage(trussIndex);
+};
+
+// Carrossel Shampoo Inforcer
+const shampoImages = [
+  'shampo1.jpg','shampo2.jpg','shampo3.jpg','shampo4.jpg',
+  'shampo5.jpg','shampo6.jpg','shampo7.jpg','shampo8.jpg',
+  'shampo9.jpg','shampo10.jpg','shampo11.jpg'
+];
+let shampoIndex = 0;
+const shampoImageElement = document.getElementById("shampoCarouselImage");
+
+function showShampoImage(index) {
+  shampoImageElement.src = shampoImages[index];
+}
+window.nextShampoImage = function () {
+  shampoIndex = (shampoIndex + 1) % shampoImages.length;
+  showShampoImage(shampoIndex);
+};
+window.prevShampoImage = function () {
+  shampoIndex = (shampoIndex - 1 + shampoImages.length) % shampoImages.length;
+  showShampoImage(shampoIndex);
+};
     
   });
 
@@ -600,6 +657,57 @@ window.prevDanosImage = function () {
     <p class="text-gray-600 mb-4">Restaura pontas duplas, dá brilho intenso e sela os fios. Fórmula Lola Cosmetics.</p>
     <a href="https://www.amazon.com.br/dp/B0B59GN8G8" target="_blank"
        class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Vichy Shampoo Energy+ -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="vichyCarouselImage" src="vichy1.jpg" alt="Vichy Shampoo Energy+" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevVichyImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextVichyImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Vichy Shampoo Antiqueda Energy+ 400g</h4>
+    <p class="text-gray-600 mb-4">Estimulante e fortalecedor para cabelos fracos e quebradiços. Auxilia no combate à queda.</p>
+    <a href="https://www.amazon.com.br/dp/B00YY07FX8" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Truss Óleo Reconstrutor -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="trussCarouselImage" src="truss1.jpg" alt="Truss Uso Obrigatório" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevTrussImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextTrussImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Truss Uso Obrigatório 30ml</h4>
+    <p class="text-gray-600 mb-4">Reconstrução, brilho e proteção para todos os tipos de cabelo. Fórmula premium.</p>
+    <a href="https://www.amazon.com.br/dp/B01M5GSX8X" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+<!-- Produto: L'Oréal Inforcer Shampoo -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="shampoCarouselImage" src="shampo1.jpg" alt="Shampoo L'Oréal Inforcer" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevShampoImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextShampoImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Inforcer Shampoo 300ml</h4>
+    <p class="text-gray-600 mb-4">Com Biotina. Protege, fortalece e previne quebras. Ideal para cabelos frágeis e danificados.</p>
+    <a href="https://www.amazon.com.br/dp/B07R5W9FWH" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
       Ver na Amazon
     </a>
   </div>
