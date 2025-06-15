@@ -188,20 +188,9 @@
     const niveaImages = ['nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg', 'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'];
     let niveaIndex = 0;
     const niveaImageElement = document.getElementById("niveaCarouselImage");
-
-    function showNiveaImage(index) {
-      niveaImageElement.src = niveaImages[index];
-    }
-
-    window.nextNiveaImage = function () {
-      niveaIndex = (niveaIndex + 1) % niveaImages.length;
-      showNiveaImage(niveaIndex);
-    };
-
-    window.prevNiveaImage = function () {
-      niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
-      showNiveaImage(niveaIndex);
-    };
+    function showNiveaImage(index) {niveaImageElement.src = niveaImages[index];}
+    window.nextNiveaImage = function () {niveaIndex = (niveaIndex + 1) % niveaImages.length;showNiveaImage(niveaIndex);};
+    window.prevNiveaImage = function () {niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length; showNiveaImage(niveaIndex);};
 
     // Carrossel CeraVe
     const ceraveImages = ['cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg', 'cerave6.jpg', 'cerave7.jpg'];
