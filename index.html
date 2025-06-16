@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <!-- Botão hambúrguer -->
+  <!-- Botão hambúrguer flutuante -->
   <button id="menuBtn" aria-label="Abrir menu"
     class="fixed top-4 left-4 transition-all duration-300 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -60,17 +60,19 @@
     });
   </script>
 
-  <!-- Barra de busca -->
-  <div class="relative max-w-md mx-auto mt-6 mb-4">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Buscar produto..." 
-      class="w-full px-4 py-2 pl-10 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-    >
-    <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
-    </svg>
+  <!-- Barra de busca fixa -->
+  <div class="sticky top-0 z-40 bg-white py-4 shadow-md">
+    <div class="relative max-w-md mx-auto">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Buscar produto..." 
+        class="w-full px-4 py-2 pl-10 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+      >
+      <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+    </div>
   </div>
 
   <script>
@@ -96,7 +98,6 @@
   <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
       <!-- Produto 1 -->
       <div class="produto border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
         <div class="relative w-full h-64 bg-gray-100">
@@ -105,7 +106,8 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
           <p class="text-gray-600 mb-4">Com 55% de óleos naturais, espuma cremosa e hidratação intensa para a pele.</p>
-          <a href="https://amzn.to/3HHh6RH" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/3HHh6RH" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
 
@@ -117,7 +119,8 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
           <p class="text-gray-600 mb-4">Com ácido hialurônico, restaura a barreira da pele. Textura leve para uso diário.</p>
-          <a href="https://amzn.to/4kK4Lem" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/4kK4Lem" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
 
@@ -129,18 +132,20 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">Cetaphil Creme Hidratante 453g</h4>
           <p class="text-gray-600 mb-4">Ideal para peles secas e sensíveis. Fórmula eficaz com hidratação intensa.</p>
-          <a href="https://amzn.to/4n30lR4" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/4n30lR4" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
-
     </div>
 
+    <!-- Botão Ver mais -->
     <div class="mt-8 text-center">
-      <a href="corpo_e_banho.html" class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
+      <a href="corpo_e_banho.html"
+        class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
     </div>
   </section>
 
-  <!-- Seção Cabelo -->
+  <!-- Seção Cuidados com o Cabelo -->
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -151,7 +156,8 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">L'Oréal Paris Elseve Óleo Extraordinário</h4>
           <p class="text-gray-600 mb-4">Anti Frizz, protetor térmico, nutrição e brilho. Ideal para todos os tipos de cabelo. 100ml.</p>
-          <a href="https://amzn.to/4e3HW2I" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">Ver na Amazon</a>
+          <a href="https://amzn.to/4e3HW2I" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
 
@@ -161,7 +167,8 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">Morte Súbita Máscara Super Hidratante 450g</h4>
           <p class="text-gray-600 mb-4">Hidratação profunda para cabelos danificados. Restaura brilho e maciez.</p>
-          <a href="https://amzn.to/45VmbzX" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">Ver na Amazon</a>
+          <a href="https://amzn.to/45VmbzX" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
 
@@ -171,16 +178,18 @@
         <div class="p-4">
           <h4 class="nome-produto text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Óleo 10 em 1 Absolut Repair</h4>
           <p class="text-gray-600 mb-4">Reparação profunda com brilho e nutrição. Com Gold Quinoa e Proteínas.</p>
-          <a href="https://amzn.to/3FZtEn5" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">Ver na Amazon</a>
+          <a href="https://amzn.to/3FZtEn5" target="_blank"
+            class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
         </div>
       </div>
+    </div>
 
+    <!-- Botão Ver Mais -->
+    <div class="mt-8 text-center">
+      <a href="cuidados_com_o_cabelo.html"
+        class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
     </div>
   </section>
-
-  <div class="mt-8 text-center">
-    <a href="cuidados_com_o_cabelo.html" class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
-  </div>
 
   <!-- Rodapé -->
   <footer class="py-6 text-center text-gray-600 border-t mt-12">
