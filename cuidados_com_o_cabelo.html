@@ -73,10 +73,6 @@
     <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
-<header class="fixed top-0 left-0 right-0 bg-white z-50 shadow p-4">
-  <input id="searchInput" type="text" placeholder="Buscar produtos..." class="w-full max-w-md px-4 py-2 border rounded mx-auto block text-gray-800">
-</header>
-<div class="mt-24" id="resultados"></div> <!-- espaço para mostrar os resultados -->
 
   
    <!-- Seções cuidados com o cabelo -->
@@ -378,40 +374,6 @@
     });
   </script>
 
-
-  <script>
-  let produtos = [];
-
-  fetch('produtos.json')
-    .then(res => res.json())
-    .then(data => produtos = data);
-
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const termo = this.value.toLowerCase();
-    const resultados = produtos.filter(p =>
-      p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo)
-    );
-
-    const container = document.getElementById('resultados');
-    container.innerHTML = '';
-
-    resultados.forEach(p => {
-      const item = document.createElement('div');
-      item.className = "p-4 border rounded-lg shadow mb-4";
-      item.innerHTML = `
-        <div class="flex gap-4">
-          <img src="${p.imagem}" alt="${p.nome}" class="w-24 h-24 object-contain">
-          <div>
-            <h3 class="text-lg font-semibold text-purple-700">${p.nome}</h3>
-            <p class="text-sm text-gray-600">${p.descricao}</p>
-            <a href="${p.link}" target="_blank" class="text-purple-600 font-semibold inline-block mt-2 hover:underline">Ver na Amazon</a>
-          </div>
-        </div>
-      `;
-      container.appendChild(item);
-    });
-  });
-</script>
 
 
 </body>
