@@ -1,0 +1,22 @@
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50 p-4 flex justify-center">
+  <input id="searchInput" type="text" placeholder="Buscar produtos..." class="border px-4 py-2 w-full max-w-md rounded-full shadow focus:outline-none">
+</header>
+<div id="searchResults" class="mt-24 px-4 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 hidden"></div>
+
+
+
+[
+  {
+    "nome": "L'Oréal Paris Elseve Óleo Extraordinário",
+    "descricao": "Anti Frizz, Protetor Térmico, nutre os fios e proporciona brilho e leveza.",
+    "imagem": "loreal1.jpg",
+    "link": "https://amzn.to/4e3HW2I"
+  },
+  {
+    "nome": "Morte Súbita Máscara Super Hidratante",
+    "descricao": "Da Lola Cosmetics, hidratação profunda para cabelos danificados.",
+    "imagem": "morte1.jpg",
+    "link": "https://amzn.to/45VmbzX"
+  }
+  // Adicione todos os produtos aqui
+]
