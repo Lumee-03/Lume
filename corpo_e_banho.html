@@ -190,7 +190,7 @@
   window.prevNiveaImage = () => { niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length; showNiveaImage(niveaIndex); };
 
   // Carrossel: CeraVe Loção
-  const ceraveImages = ['cerave1.jpg', 'cerave2.jpg'];
+  const ceraveImages = ['cerave1.jpg', 'cerave2.jpg','cerave3.jpg','cerave4.jpg','cerave5.jpg','cerave6.jpg','cerave7.jpg'];
   let ceraveIndex = 0;
   const ceraveImageElement = document.getElementById("ceraveCarouselImage");
   function showCeraveImage(index) { ceraveImageElement.src = ceraveImages[index]; }
@@ -198,7 +198,7 @@
   window.prevCeraveImage = () => { ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length; showCeraveImage(ceraveIndex); };
 
   // Carrossel: Cetaphil Creme
-  const cetaphilImages = ['cetaphil1.jpg', 'cetaphil2.jpg'];
+  const cetaphilImages = ['cetaphil1.jpg', 'cetaphil2.jpg','cetaphil3.jpg','cetaphil4.jpg','cetaphil5.jpg','cetaphil6.jpg','cetaphil7.jpg'];
   let cetaphilIndex = 0;
   const cetaphilImageElement = document.getElementById("cetaphilCarouselImage");
   function showCetaphilImage(index) { cetaphilImageElement.src = cetaphilImages[index]; }
@@ -206,7 +206,7 @@
   window.prevCetaphilImage = () => { cetaphilIndex = (cetaphilIndex - 1 + cetaphilImages.length) % cetaphilImages.length; showCetaphilImage(cetaphilIndex); };
 
   // Carrossel: Cetaphil Loção
-  const locaoImages = ['locao1.jpg', 'locao2.jpg'];
+  const locaoImages = ['locao1.jpg', 'locao2.jpg','locao3.jpg','locao4.jpg','locao5.jpg','locao6.jpg'];
   let locaoIndex = 0;
   const locaoImageElement = document.getElementById("locaoCarouselImage");
   function showLocaoImage(index) { locaoImageElement.src = locaoImages[index]; }
@@ -214,7 +214,7 @@
   window.prevLocaoImage = () => { locaoIndex = (locaoIndex - 1 + locaoImages.length) % locaoImages.length; showLocaoImage(locaoIndex); };
 
   // Carrossel: Epidrat
-  const epidratImages = ['epidrat1.jpg', 'epidrat2.jpg'];
+  const epidratImages = ['epidrat1.jpg', 'epidrat2.jpg','epidrat3.jpg','epidrat4.jpg','epidrat5.jpg','epidrat6.jpg'];
   let epidratIndex = 0;
   const epidratImageElement = document.getElementById("epidratCarouselImage");
   function showEpidratImage(index) { epidratImageElement.src = epidratImages[index]; }
@@ -222,7 +222,7 @@
   window.prevEpidratImage = () => { epidratIndex = (epidratIndex - 1 + epidratImages.length) % epidratImages.length; showEpidratImage(epidratIndex); };
 
   // Carrossel: CeraVe Creme
-  const ceraveCremeImages = ['ceravecreme1.jpg', 'ceravecreme2.jpg'];
+  const ceraveCremeImages = ['ceravecreme1.jpg', 'ceravecreme2.jpg','ceravecreme3.jpg','ceravecreme4.jpg','ceravecreme5.jpg','ceravecreme6.jpg','ceravecreme7.jpg','ceravecreme8.jpg'];
   let ceraveCremeIndex = 0;
   const ceraveCremeImageElement = document.getElementById("ceraveCremeCarouselImage");
   function showCeraveCremeImage(index) { ceraveCremeImageElement.src = ceraveCremeImages[index]; }
@@ -230,7 +230,7 @@
   window.prevCeraveCremeImage = () => { ceraveCremeIndex = (ceraveCremeIndex - 1 + ceraveCremeImages.length) % ceraveCremeImages.length; showCeraveCremeImage(ceraveCremeIndex); };
 
   // Carrossel: Mustela
-  const mustelaImages = ['mustela1.jpg', 'mustela2.jpg'];
+  const mustelaImages = ['mustela1.jpg', 'mustela2.jpg','mustela3.jpg','mustela4.jpg','mustela5.jpg','mustela6.jpg','mustela7.jpg'];
   let mustelaIndex = 0;
   const mustelaImageElement = document.getElementById("mustelaCarouselImage");
   function showMustelaImage(index) { mustelaImageElement.src = mustelaImages[index]; }
@@ -238,10 +238,42 @@
   window.prevMustelaImage = () => { mustelaIndex = (mustelaIndex - 1 + mustelaImages.length) % mustelaImages.length; showMustelaImage(mustelaIndex); };
 
   // Carrossel: Bepantol
-  const bepantolImages = ['bepantol1.jpg', 'bepantol2.jpg'];
+  const bepantolImages = ['bepantol1.jpg', 'bepantol2.jpg','bepantol3.jpg','bepantol4.jpg'];
   let bepantolIndex = 0;
   const bepantolImageElement = document.getElementById("bepantolCarouselImage");
   function showBepantolImage(index) { bepantolImageElement.src = bepantolImages[index]; }
   window.nextBepantolImage = () => { bepantolIndex = (bepantolIndex + 1) % bepantolImages.length; showBepantolImage(bepantolIndex); };
   window.prevBepantolImage = () => { bepantolIndex = (bepantolIndex - 1 + bepantolImages.length) % bepantolImages.length; showBepantolImage(bepantolIndex); };
+    
 </script>
+
+
+
+
+  <!-- Rodapé -->
+  <footer class="py-6 text-center text-gray-600 border-t mt-12">
+    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const menuLinks = menu.querySelectorAll("a");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menu.classList.toggle("-translate-x-full", !isOpen);
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        isOpen = false;
+        menu.classList.add("-translate-x-full");
+      });
+    });
+  </script>
+
+</body>
+</html>
