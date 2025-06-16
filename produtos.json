@@ -89,5 +89,23 @@
     "imagem": "epidrat1.jpg",
     "link": "https://amzn.to/3FUlhct"
   }
+  {
+    "nome": "CeraVe Creme Hidratante Corporal",
+    "descricao": "Com textura cremosa, ácido hialurônico e 3 ceramidas essenciais, hidrata profundamente e restaura a barreira da pele seca.",
+    "imagem": "ceravecreme1.jpg",
+    "link": "https://amzn.to/4l4xxpD"
+  },
+  {
+    "nome": "Mustela Cicastela Creme Reparador 40ml",
+    "descricao": "Repara, hidrata, purifica e acalma a pele dos bebês. Ideal para pequenos machucados, vermelhidão e irritações leves.",
+    "imagem": "mustela1.jpg",
+    "link": "https://amzn.to/3HELz33"
+  },
+  {
+    "nome": "Bepantol Derma Toque Seco 30g",
+    "descricao": "Oil Free, Hidratante facial e corporal. Ideal para peles sensíveis e secas. Textura leve e rápida absorção.",
+    "imagem": "bepantol1.jpg",
+    "link": "https://amzn.to/3ZxoOUH"
+  }
 ]
 
