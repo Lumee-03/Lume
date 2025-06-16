@@ -17,10 +17,10 @@
   </div>
 
 
-<!-- Menu lateral -->
-<div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full menu-slide z-50">
+ <!-- Menu lateral -->
+<div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
   <div class="p-6">
-    <h2 class="text-2xl font-bold text-purple-700 mb-4"></h2>
+    <h2 class="text-2xl font-bold text-purple-700 mb-4">Categorias</h2>
     <ul class="space-y-4">
       <li><a href="index.html" class="text-purple-600 hover:text-purple-800">Início</a></li>
       <li><a href="corpo_e_banho.html" class="text-purple-600 hover:text-purple-800">Corpo e Banho</a></li>
@@ -29,13 +29,41 @@
   </div>
 </div>
 
-  
-  <!-- Botão hambúrguer -->
-  <button id="menuBtn" aria-label="Abrir menu" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
-    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z" clip-rule="evenodd" />
-    </svg>
-  </button>
+<!-- Botão hambúrguer flutuante -->
+<button id="menuBtn" aria-label="Abrir menu"
+  class="fixed top-4 left-4 transition-all duration-300 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+    <path fill-rule="evenodd"
+      d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
+      clip-rule="evenodd" />
+  </svg>
+</button>
+
+<script>
+  const menu = document.getElementById("menu");
+  const menuBtn = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  menuBtn.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+
+    if (menuOpen) {
+      menu.classList.remove("-translate-x-full");
+      menu.classList.add("translate-x-0");
+
+      // Move o botão para a direita
+      menuBtn.classList.remove("left-4");
+      menuBtn.classList.add("left-72"); // equivale a 18rem (largura do menu + espaço)
+    } else {
+      menu.classList.remove("translate-x-0");
+      menu.classList.add("-translate-x-full");
+
+      // Volta o botão para a posição original
+      menuBtn.classList.remove("left-72");
+      menuBtn.classList.add("left-4");
+    }
+  });
+</script>
 
 
   <!-- Hero -->
