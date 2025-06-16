@@ -206,179 +206,142 @@
   </section>
 
 
-  // Carrossel Rapunzel
-const rapunzelImages = [
-  'rapunzel1.jpg','rapunzel2.jpg','rapunzel3.jpg','rapunzel4.jpg','rapunzel5.jpg',
-  'rapunzel6.jpg','rapunzel7.jpg','rapunzel8.jpg','rapunzel9.jpg'
-];
-let rapunzelIndex = 0;
-const rapunzelImageElement = document.getElementById("rapunzelCarouselImage");
+ <script>
+  // L'Oréal Elseve Óleo Extraordinário
+  const lorealImages = ['loreal1.jpg', 'loreal2.jpg','loreal3.jpg','loreal4.jpg','loreal5.jpg','loreal6.jpg','loreal7.jpg'];
+  let lorealIndex = 0;
+  function nextLorealImage() {
+    lorealIndex = (lorealIndex + 1) % lorealImages.length;
+    document.getElementById('lorealCarouselImage').src = lorealImages[lorealIndex];
+  }
+  function prevLorealImage() {
+    lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
+    document.getElementById('lorealCarouselImage').src = lorealImages[lorealIndex];
+  }
 
-function showRapunzelImage(index) {
-  rapunzelImageElement.src = rapunzelImages[index];
-}
-window.nextRapunzelImage = function () {
-  rapunzelIndex = (rapunzelIndex + 1) % rapunzelImages.length;
-  showRapunzelImage(rapunzelIndex);
-};
-window.prevRapunzelImage = function () {
-  rapunzelIndex = (rapunzelIndex - 1 + rapunzelImages.length) % rapunzelImages.length;
-  showRapunzelImage(rapunzelIndex);
-};
+  // Morte Súbita Lola
+  const morteImages = ['morte1.jpg', 'morte2.jpg','morte3.jpg','morte4.jpg','morte5.jpg','morte6.jpg','morte7.jpg'];
+  let morteIndex = 0;
+  function nextMorteImage() {
+    morteIndex = (morteIndex + 1) % morteImages.length;
+    document.getElementById('morteCarouselImage').src = morteImages[morteIndex];
+  }
+  function prevMorteImage() {
+    morteIndex = (morteIndex - 1 + morteImages.length) % morteImages.length;
+    document.getElementById('morteCarouselImage').src = morteImages[morteIndex];
+  }
 
+  // L'Oréal Professionnel 10 em 1
+  const lorealProImages = ['lorealpro1.jpg', 'lorealpro2.jpg', 'lorealpro3.jpg', 'lorealpro4.jpg', 'lorealpro5.jpg', 'lorealpro6.jpg'];
+  let lorealProIndex = 0;
+  function nextLorealProImage() {
+    lorealProIndex = (lorealProIndex + 1) % lorealProImages.length;
+    document.getElementById('lorealProCarouselImage').src = lorealProImages[lorealProIndex];
+  }
+  function prevLorealProImage() {
+    lorealProIndex = (lorealProIndex - 1 + lorealProImages.length) % lorealProImages.length;
+    document.getElementById('lorealProCarouselImage').src = lorealProImages[lorealProIndex];
+  }
 
-// Carrossel Cicatri Renov
-const cicatriImages = [
-  'cicatri1.jpg','cicatri2.jpg','cicatri3.jpg','cicatri4.jpg',
-  'cicatri5.jpg','cicatri6.jpg','cicatri7.jpg','cicatri8.jpg'
-];
-let cicatriIndex = 0;
-const cicatriImageElement = document.getElementById("cicatriCarouselImage");
+  // Rapunzel Growth
+  const rapunzelImages = ['rapunzel1.jpg', 'rapunzel2.jpg','rapunzel3.jpg','rapunzel4.jpg','rapunzel5.jpg','rapunzel6.jpg','rapunzel7.jpg','rapunzel8.jpg','rapunzel9.jpg'];
+  let rapunzelIndex = 0;
+  function nextRapunzelImage() {
+    rapunzelIndex = (rapunzelIndex + 1) % rapunzelImages.length;
+    document.getElementById('rapunzelCarouselImage').src = rapunzelImages[rapunzelIndex];
+  }
+  function prevRapunzelImage() {
+    rapunzelIndex = (rapunzelIndex - 1 + rapunzelImages.length) % rapunzelImages.length;
+    document.getElementById('rapunzelCarouselImage').src = rapunzelImages[rapunzelIndex];
+  }
 
-function showCicatriImage(index) {
-  cicatriImageElement.src = cicatriImages[index];
-}
-window.nextCicatriImage = function () {
-  cicatriIndex = (cicatriIndex + 1) % cicatriImages.length;
-  showCicatriImage(cicatriIndex);
-};
-window.prevCicatriImage = function () {
-  cicatriIndex = (cicatriIndex - 1 + cicatriImages.length) % cicatriImages.length;
-  showCicatriImage(cicatriIndex);
-};
+  // Cicatri Renov
+  const cicatriImages = ['cicatri1.jpg', 'cicatri2.jpg','cicatri3.jpg','cicatri4.jpg','cicatri5.jpg','cicatri6.jpg','cicatri7.jpg','cicatri8.jpg'];
+  let cicatriIndex = 0;
+  function nextCicatriImage() {
+    cicatriIndex = (cicatriIndex + 1) % cicatriImages.length;
+    document.getElementById('cicatriCarouselImage').src = cicatriImages[cicatriIndex];
+  }
+  function prevCicatriImage() {
+    cicatriIndex = (cicatriIndex - 1 + cicatriImages.length) % cicatriImages.length;
+    document.getElementById('cicatriCarouselImage').src = cicatriImages[cicatriIndex];
+  }
 
-// Carrossel Danos Vorazes
-const danosImages = [
-  'danos1.jpg','danos2.jpg','danos3.jpg','danos4.jpg',
-  'danos5.jpg','danos6.jpg'
-];
-let danosIndex = 0;
-const danosImageElement = document.getElementById("danosCarouselImage");
+  // Danos Vorazes
+  const danosImages = ['danos1.jpg', 'danos2.jpg','danos3.jpg','danos4.jpg','danos5.jpg','danos6.jpg'];
+  let danosIndex = 0;
+  function nextDanosImage() {
+    danosIndex = (danosIndex + 1) % danosImages.length;
+    document.getElementById('danosCarouselImage').src = danosImages[danosIndex];
+  }
+  function prevDanosImage() {
+    danosIndex = (danosIndex - 1 + danosImages.length) % danosImages.length;
+    document.getElementById('danosCarouselImage').src = danosImages[danosIndex];
+  }
 
-function showDanosImage(index) {
-  danosImageElement.src = danosImages[index];
-}
-window.nextDanosImage = function () {
-  danosIndex = (danosIndex + 1) % danosImages.length;
-  showDanosImage(danosIndex);
-};
-window.prevDanosImage = function () {
-  danosIndex = (danosIndex - 1 + danosImages.length) % danosImages.length;
-  showDanosImage(danosIndex);
-};
-    
-// Carrossel Vichy
-const vichyImages = [
-  'vichy1.jpg','vichy2.jpg','vichy3.jpg','vichy4.jpg','vichy5.jpg',
-  'vichy6.jpg','vichy7.jpg','vichy8.jpg','vichy9.jpg','vichy10.jpg'
-];
-let vichyIndex = 0;
-const vichyImageElement = document.getElementById("vichyCarouselImage");
+  // Vichy
+  const vichyImages = ['vichy1.jpg', 'vichy2.jpg','vichy3.jpg','vichy4.jpg','vichy5.jpg','vichy6.jpg','vichy7.jpg','vichy8.jpg','vichy9.jpg'];
+  let vichyIndex = 0;
+  function nextVichyImage() {
+    vichyIndex = (vichyIndex + 1) % vichyImages.length;
+    document.getElementById('vichyCarouselImage').src = vichyImages[vichyIndex];
+  }
+  function prevVichyImage() {
+    vichyIndex = (vichyIndex - 1 + vichyImages.length) % vichyImages.length;
+    document.getElementById('vichyCarouselImage').src = vichyImages[vichyIndex];
+  }
 
-function showVichyImage(index) {
-  vichyImageElement.src = vichyImages[index];
-}
-window.nextVichyImage = function () {
-  vichyIndex = (vichyIndex + 1) % vichyImages.length;
-  showVichyImage(vichyIndex);
-};
-window.prevVichyImage = function () {
-  vichyIndex = (vichyIndex - 1 + vichyImages.length) % vichyImages.length;
-  showVichyImage(vichyIndex);
-};
+  // Truss
+  const trussImages = ['truss1.jpg', 'truss2.jpg','truss3.jpg','truss4.jpg'];
+  let trussIndex = 0;
+  function nextTrussImage() {
+    trussIndex = (trussIndex + 1) % trussImages.length;
+    document.getElementById('trussCarouselImage').src = trussImages[trussIndex];
+  }
+  function prevTrussImage() {
+    trussIndex = (trussIndex - 1 + trussImages.length) % trussImages.length;
+    document.getElementById('trussCarouselImage').src = trussImages[trussIndex];
+  }
 
-// Carrossel Truss
-const trussImages = ['truss1.jpg','truss2.jpg','truss3.jpg','truss4.jpg'];
-let trussIndex = 0;
-const trussImageElement = document.getElementById("trussCarouselImage");
-
-function showTrussImage(index) {
-  trussImageElement.src = trussImages[index];
-}
-window.nextTrussImage = function () {
-  trussIndex = (trussIndex + 1) % trussImages.length;
-  showTrussImage(trussIndex);
-};
-window.prevTrussImage = function () {
-  trussIndex = (trussIndex - 1 + trussImages.length) % trussImages.length;
-  showTrussImage(trussIndex);
-};
-
-// Carrossel Shampoo Inforcer
-const shampoImages = [
-  'shampo1.jpg','shampo2.jpg','shampo3.jpg','shampo4.jpg',
-  'shampo5.jpg','shampo6.jpg','shampo7.jpg','shampo8.jpg',
-  'shampo9.jpg','shampo10.jpg','shampo11.jpg'
-];
-let shampoIndex = 0;
-const shampoImageElement = document.getElementById("shampoCarouselImage");
-
-function showShampoImage(index) {
-  shampoImageElement.src = shampoImages[index];
-}
-window.nextShampoImage = function () {
-  shampoIndex = (shampoIndex + 1) % shampoImages.length;
-  showShampoImage(shampoIndex);
-};
-window.prevShampoImage = function () {
-  shampoIndex = (shampoIndex - 1 + shampoImages.length) % shampoImages.length;
-  showShampoImage(shampoIndex);
-};
+  // Inforcer Shampoo
+  const shampoImages = ['shampo1.jpg', 'shampo2.jpg','shampo3.jpg','shampo4.jpg','shampo5.jpg','shampo6.jpg','shampo7.jpg','shampo8.jpg','shampo9.jpg','shampo10.jpg','shampo11.jpg'];
+  let shampoIndex = 0;
+  function nextShampoImage() {
+    shampoIndex = (shampoIndex + 1) % shampoImages.length;
+    document.getElementById('shampoCarouselImage').src = shampoImages[shampoIndex];
+  }
+  function prevShampoImage() {
+    shampoIndex = (shampoIndex - 1 + shampoImages.length) % shampoImages.length;
+    document.getElementById('shampoCarouselImage').src = shampoImages[shampoIndex];
+  }
+</script>
 
 
- // Carrossel L'Oréal
-    const lorealImages = ['loreal1.jpg', 'loreal2.jpg', 'loreal3.jpg', 'loreal4.jpg', 'loreal5.jpg', 'loreal6.jpg', 'loreal7.jpg'];
-    let lorealIndex = 0;
-    const lorealImageElement = document.getElementById("lorealCarouselImage");
 
-    function showLorealImage(index) {
-      lorealImageElement.src = lorealImages[index];
-    }
+  <!-- Rodapé -->
+  <footer class="py-6 text-center text-gray-600 border-t mt-12">
+    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
+  </footer>
 
-    window.nextLorealImage = function () {
-      lorealIndex = (lorealIndex + 1) % lorealImages.length;
-      showLorealImage(lorealIndex);
-    };
+  <!-- Script do menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const menuLinks = menu.querySelectorAll("a");
+    let isOpen = false;
 
-    window.prevLorealImage = function () {
-      lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
-      showLorealImage(lorealIndex);
-    };
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menu.classList.toggle("-translate-x-full", !isOpen);
+    });
 
-    // Carrossel Morte Súbita
-const morteImages = ['morte1.jpg', 'morte2.jpg', 'morte3.jpg', 'morte4.jpg','morte5.jpg', 'morte6.jpg', 'morte7.jpg'];
-let morteIndex = 0;
-const morteImageElement = document.getElementById("morteCarouselImage");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        isOpen = false;
+        menu.classList.add("-translate-x-full");
+      });
+    });
+  </script>
 
-function showMorteImage(index) {
-  morteImageElement.src = morteImages[index];
-}
-
-window.nextMorteImage = function () {
-  morteIndex = (morteIndex + 1) % morteImages.length;
-  showMorteImage(morteIndex);
-};
-
-window.prevMorteImage = function () {
-  morteIndex = (morteIndex - 1 + morteImages.length) % morteImages.length;
-  showMorteImage(morteIndex);
-};
-
-    // Carrossel L'Oréal Professionnel
-const lorealProImages = ['lorealpro1.jpg', 'lorealpro2.jpg', 'lorealpro3.jpg','lorealpro4.jpg', 'lorealpro5.jpg', 'lorealpro6.jpg'];
-let lorealProIndex = 0;
-const lorealProImageElement = document.getElementById("lorealProCarouselImage");
-
-function showLorealProImage(index) {
-  lorealProImageElement.src = lorealProImages[index];
-}
-
-window.nextLorealProImage = function () {
-  lorealProIndex = (lorealProIndex + 1) % lorealProImages.length;
-  showLorealProImage(lorealProIndex);
-};
-
-window.prevLorealProImage = function () {
-  lorealProIndex = (lorealProIndex - 1 + lorealProImages.length) % lorealProImages.length;
-  showLorealProImage(lorealProIndex);
-};
+</body>
+</html>
