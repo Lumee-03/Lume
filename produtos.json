@@ -53,5 +53,41 @@
   "imagem": "shampo1.jpg",
   "link": "https://amzn.to/440rrjj"
 }
+  {
+    "nome": "NIVEA Sabonete Líquido Óleo de Banho 200ml",
+    "descricao": "Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.",
+    "imagem": "nivea1.jpg",
+    "link": "https://amzn.to/3HHh6RH"
+  },
+  {
+    "nome": "CeraVe Loção Hidratante Corporal",
+    "descricao": "Com textura fluida e Ácido Hialurônico, ajuda a restaurar a barreira protetora da pele. Ideal para uso diário.",
+    "imagem": "cerave1.jpg",
+    "link": "https://amzn.to/4kK4Lem"
+  },
+  {
+    "nome": "NIVEA Loção Deo-Hidratante Milk 400ml",
+    "descricao": "Hidratação e nutrição profunda por 72h para uma pele macia e suave. Ideal para peles secas e ressecadas.",
+    "imagem": "nivealocao.jpg",
+    "link": "https://amzn.to/4ngSfES"
+  },
+  {
+    "nome": "Cetaphil Creme Hidratante 453g",
+    "descricao": "Hidratação intensa para peles secas e sensíveis. Fórmula suave e eficaz, ideal para uso diário.",
+    "imagem": "cetaphil1.jpg",
+    "link": "https://amzn.to/4n30lR4"
+  },
+  {
+    "nome": "Cetaphil Loção Hidratante 473ml",
+    "descricao": "Hidratação prolongada com fórmula leve e não oleosa. Ideal para peles sensíveis, com rápida absorção.",
+    "imagem": "locao1.jpg",
+    "link": "https://amzn.to/45X5lke"
+  },
+  {
+    "nome": "MANTECORP Epidrat Calm B5",
+    "descricao": "Hidratante calmante com D-Pantenol que alivia irritações, promove conforto imediato e hidrata profundamente a pele sensível.",
+    "imagem": "epidrat1.jpg",
+    "link": "https://amzn.to/3FUlhct"
+  }
 ]
 
