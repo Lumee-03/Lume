@@ -1,22 +1,51 @@
-<header class="fixed top-0 left-0 w-full bg-white shadow z-50 p-4 flex justify-center">
-  <input id="searchInput" type="text" placeholder="Buscar produtos..." class="border px-4 py-2 w-full max-w-md rounded-full shadow focus:outline-none">
-</header>
-<div id="searchResults" class="mt-24 px-4 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 hidden"></div>
-
-
-
 [
   {
-    "nome": "L'Oréal Paris Elseve Óleo Extraordinário",
-    "descricao": "Anti Frizz, Protetor Térmico, nutre os fios e proporciona brilho e leveza.",
+    "nome": "L'Oréal Paris Elseve Óleo Finalizador Óleo Extraordinário",
+    "descricao": "Anti Frizz, Protetor Térmico, nutre os fios e proporciona brilho e leveza. Ideal para todos os tipos de cabelo. 100ml.",
     "imagem": "loreal1.jpg",
     "link": "https://amzn.to/4e3HW2I"
   },
   {
-    "nome": "Morte Súbita Máscara Super Hidratante",
-    "descricao": "Da Lola Cosmetics, hidratação profunda para cabelos danificados.",
+    "nome": "Morte Súbita Máscara Super Hidratante 450g",
+    "descricao": "Da Lola Cosmetics, hidratação profunda e imediata para cabelos danificados. Restaura os fios e devolve brilho e maciez.",
     "imagem": "morte1.jpg",
     "link": "https://amzn.to/45VmbzX"
+  },
+  {
+    "nome": "L'Oréal Professionnel Óleo 10 em 1 Absolut Repair",
+    "descricao": "Multi-benefícios para cabelos secos e danificados. Repara, dá brilho e nutre com Gold Quinoa e Proteínas.",
+    "imagem": "lorealpro1.jpg",
+    "link": "https://amzn.to/3FZtEn5"
+  },
+  {
+    "nome": "Rapunzel Growth Tônico Capilar 250ml",
+    "descricao": "Estimula o crescimento capilar e fortalece os fios. Fórmula vegana da Lola Cosmetics.",
+    "imagem": "rapunzel1.jpg",
+    "link": "https://amzn.to/4kK4hVA"
+  },
+  {
+    "nome": "Leave-In Elseve Cicatri Renov 100ml",
+    "descricao": "Reparação instantânea e proteção térmica para cabelos danificados.",
+    "imagem": "cicatri1.jpg",
+    "link": "https://amzn.to/441npXI"
+  },
+  {
+    "nome": "Óleo Reparador Danos Vorazes 50ml",
+    "descricao": "Restaura pontas duplas, dá brilho intenso e sela os fios. Fórmula Lola Cosmetics.",
+    "imagem": "danos1.jpg",
+    "link": "https://amzn.to/44eYEZs"
+  },
+  {
+    "nome": "Vichy Shampoo Antiqueda Energy+ 400g",
+    "descricao": "Estimulante e fortalecedor para cabelos fracos e quebradiços. Auxilia no combate à queda.",
+    "imagem": "vichy1.jpg",
+    "link": "https://amzn.to/3SQW9Gw"
+  },
+  {
+    "nome": "Truss Uso Obrigatório 30ml",
+    "descricao": "Reconstrução, brilho e proteção para todos os tipos de cabelo. Fórmula premium.",
+    "imagem": "truss1.jpg",
+    "link": "https://amzn.to/4jVSTET"
   }
-  // Adicione todos os produtos aqui
 ]
+
