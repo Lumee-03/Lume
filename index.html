@@ -44,121 +44,46 @@
     <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
-  <!-- Corpo e Banho - Destaques -->
-<!-- Seção Corpo e Banho com produtos -->
-  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+ <!-- Seção de Destaques: Corpo e Banho -->
+<section id="destaques-corpo" class="py-12 px-4 max-w-6xl mx-auto">
+  <h2 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho – Destaques</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-<!-- Produto: NIVEA -->
-      
-<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-        <div class="relative w-full h-64 bg-gray-100">
-          <img id="niveaCarouselImage" src="nivea1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
-          <button onclick="prevNiveaImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
-          <button onclick="nextNiveaImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
-        </div>
-        <div class="p-4">
-          <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
-          <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
-          <a href="https://amzn.to/3HHh6RH" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
-        </div>
-      </div>
-
-      <!-- Produto: CeraVe Loção Hidratante -->
-<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
-  <div class="relative w-full h-64 bg-gray-100">
-    <img id="ceraveCarouselImage" src="cerave1.jpg" alt="CeraVe Loção Hidratante" class="w-full h-full object-contain transition duration-300 ease-in-out">
-    <button onclick="prevCeraveImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
-    <button onclick="nextCeraveImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
-  </div>
-  <div class="p-4">
-    <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
-    <p class="text-gray-600 mb-4">Com textura fluida e Ácido Hialurônico, ajuda a restaurar a barreira protetora da pele. Ideal para uso diário.</p>
-    <a href="https://amzn.to/4kK4Lem" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
-  </div>
-</div>
-
-<!-- Produto: Bepantol Derma Toque Seco -->
-<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-  <div class="relative w-full h-64 bg-gray-100">
-    <img id="bepantolCarouselImage" src="bepantol1.jpg" alt="Bepantol Derma Toque Seco" class="w-full h-full object-contain transition duration-300 ease-in-out">
-    <button onclick="prevBepantolImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
-    <button onclick="nextBepantolImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
-  </div>
-  <div class="p-4">
-    <h4 class="text-lg font-medium mb-2 text-purple-700">Bepantol Derma Toque Seco 30g</h4>
-    <p class="text-gray-600 mb-4">Oil Free, Hidratante facial e corporal. Ideal para peles sensíveis e secas. Textura leve e rápida absorção.</p>
-    <a href="https://amzn.to/3ZxoOUH" target="_blank"
-       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
-      Ver na Amazon
-    </a>
-  </div>
-</div>
-
- <div class="text-center mt-8">
-      <a href="corpo_e_banho.html" class="text-purple-700 font-semibold hover:underline">Ver mais produtos de corpo e banho →</a>
-    </div>
-  </section>
-      
-  </section>
-
-  <!-- Cuidados com o Cabelo - Destaques -->
-  <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo - Destaques</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <!-- Produto 1 -->
-      <div class="border rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 fade-in">
-        <img src="rapunzel1.jpg" class="w-full h-64 object-contain" />
-        <div class="p-4">
-          <h4 class="text-lg font-medium mb-2 text-purple-700">Tônico Rapunzel</h4>
-          <p class="text-gray-600 mb-4">Fortalece raízes e estimula o crescimento.</p>
-          <a href="https://amzn.to/seulink" target="_blank" class="bg-purple-500 text-white px-4 py-2 rounded-full block text-center hover:bg-purple-600">Ver na Amazon</a>
-        </div>
-      </div>
-
-      <!-- Produto 2 -->
-      <div class="border rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 fade-in">
-        <img src="cicatri1.jpg" class="w-full h-64 object-contain" />
-        <div class="p-4">
-          <h4 class="text-lg font-medium mb-2 text-purple-700">Elseve Cicatri Renov</h4>
-          <p class="text-gray-600 mb-4">Leave-in com ação reparadora intensa.</p>
-          <a href="https://amzn.to/seulink" target="_blank" class="bg-purple-500 text-white px-4 py-2 rounded-full block text-center hover:bg-purple-600">Ver na Amazon</a>
-        </div>
-      </div>
-
-      <!-- Produto 3 -->
-      <div class="border rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 fade-in">
-        <img src="danos1.jpg" class="w-full h-64 object-contain" />
-        <div class="p-4">
-          <h4 class="text-lg font-medium mb-2 text-purple-700">Óleo Danos Vorazes</h4>
-          <p class="text-gray-600 mb-4">Restauração para cabelos danificados.</p>
-          <a href="https://amzn.to/seulink" target="_blank" class="bg-purple-500 text-white px-4 py-2 rounded-full block text-center hover:bg-purple-600">Ver na Amazon</a>
-        </div>
+    <!-- Produto Destaque 1: NIVEA Sabonete Líquido -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="nivea1.jpg" alt="NIVEA Sabonete Líquido" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h3 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho</h3>
+        <p class="text-gray-600 mb-4 text-sm">Espuma cremosa e hidratação intensa com 55% de óleos naturais.</p>
+        <a href="https://amzn.to/3HHh6RH" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
       </div>
     </div>
 
-    <div class="text-center mt-8">
-      <a href="cuidados_com_o_cabelo.html" class="text-purple-700 font-semibold hover:underline">Ver mais produtos de Cabelo →</a>
+    <!-- Produto Destaque 2: CeraVe Loção Hidratante -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="cerave1.jpg" alt="CeraVe Loção Hidratante" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h3 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante</h3>
+        <p class="text-gray-600 mb-4 text-sm">Textura fluida com ácido hialurônico para hidratação diária.</p>
+        <a href="https://amzn.to/4kK4Lem" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
+      </div>
     </div>
-  </section>
 
-  <!-- ScrollReveal -->
-  <script>
-    document.getElementById("menuBtn").addEventListener("click", function () {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("-translate-x-full");
-    });
+    <!-- Produto Destaque 3: NIVEA Loção Milk -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="nivealocao.jpg" alt="NIVEA Loção Milk" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h3 class="text-lg font-medium mb-2 text-purple-700">NIVEA Loção Deo-Hidratante Milk</h3>
+        <p class="text-gray-600 mb-4 text-sm">Nutrição profunda por 72h para peles secas e ressecadas.</p>
+        <a href="https://amzn.to/4ngSfES" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
+      </div>
+    </div>
 
-    ScrollReveal().reveal('.fade-in', {
-      origin: 'bottom',
-      distance: '40px',
-      duration: 1000,
-      delay: 100,
-      easing: 'ease-in-out',
-      reset: false
-    });
-  </script>
-</body>
-</html>
+  </div>
+
+  <!-- Botão para Ver Todos os Produtos -->
+  <div class="mt-8 text-center">
+    <a href="corpo_e_banho.html" class="inline-block text-purple-600 hover:underline text-base font-medium">Ver todos os produtos de Corpo e Banho →</a>
+  </div>
+</section>
