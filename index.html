@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     .menu-slide {
       transition: transform 0.3s ease-in-out;
@@ -13,145 +12,735 @@
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans relative">
-
-  <!-- Logo -->
   <div class="text-center py-6">
     <img src="logo.png" alt="Logo Lume" class="mx-auto h-40">
   </div>
+
 
   <!-- Menu lateral -->
   <div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full menu-slide z-50">
     <div class="p-6">
       <h2 class="text-2xl font-bold text-purple-700 mb-4">Categorias</h2>
       <ul class="space-y-4">
-        <li><a href="banho-e-corpo.html" class="text-purple-600 hover:text-purple-800">Corpo e Banho</a></li>
-        <li><a href="cuidados-cabelo.html" class="text-purple-600 hover:text-purple-800">Cuidados com o Cabelo</a></li>
+        <li><a href="#corpo" class="text-purple-600 hover:text-purple-800">Corpo e Banho</a></li>
+        <li><a href="#cabelo" class="text-purple-600 hover:text-purple-800">Cuidados com o Cabelo</a></li>
       </ul>
     </div>
   </div>
 
   <!-- Botão hambúrguer -->
-  <button id="menuBtn" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+  <button id="menuBtn" aria-label="Abrir menu" class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
       <path fill-rule="evenodd" d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z" clip-rule="evenodd" />
     </svg>
   </button>
 
+
   <!-- Hero -->
   <section class="text-center py-12 bg-pink-100">
     <h2 class="text-4xl font-semibold mb-4 text-purple-700">Produtos para Jovens e Modernas</h2>
-    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">Realce sua beleza com produtos escolhidos com carinho para você.</p>
+    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">Descubra tendências que combinam com seu estilo e realce sua beleza com nossos produtos exclusivos de afiliados.</p>
     <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
 
- <!-- Seção de Destaques: Corpo e Banho -->
-<section id="destaques-corpo" class="py-12 px-4 max-w-6xl mx-auto">
-  <h2 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho – Destaques</h2>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+  <!-- Seção Corpo e Banho com produtos -->
+  <section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-    <!-- Produto Destaque 1: NIVEA Sabonete Líquido -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <img src="nivea1.jpg" alt="NIVEA Sabonete Líquido" class="w-full h-64 object-contain bg-gray-100">
-      <div class="p-4">
-        <h3 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho</h3>
-        <p class="text-gray-600 mb-4 text-sm">Espuma cremosa e hidratação intensa com 55% de óleos naturais.</p>
-        <a href="https://amzn.to/3HHh6RH" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
+<!-- Produto: NIVEA -->
+      
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+        <div class="relative w-full h-64 bg-gray-100">
+          <img id="niveaCarouselImage" src="nivea1.jpg" alt="Imagem do produto" class="w-full h-full object-contain transition duration-300 ease-in-out">
+          <button onclick="prevNiveaImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+          <button onclick="nextNiveaImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+        </div>
+        <div class="p-4">
+          <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
+          <p class="text-gray-600 mb-4">Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.</p>
+          <a href="https://amzn.to/3HHh6RH" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Produto Destaque 2: CeraVe Loção Hidratante -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <img src="cerave1.jpg" alt="CeraVe Loção Hidratante" class="w-full h-64 object-contain bg-gray-100">
-      <div class="p-4">
-        <h3 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante</h3>
-        <p class="text-gray-600 mb-4 text-sm">Textura fluida com ácido hialurônico para hidratação diária.</p>
-        <a href="https://amzn.to/4kK4Lem" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
-      </div>
-    </div>
-
-    <!-- Produto Destaque 3: NIVEA Loção Milk -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <img src="nivealocao.jpg" alt="NIVEA Loção Milk" class="w-full h-64 object-contain bg-gray-100">
-      <div class="p-4">
-        <h3 class="text-lg font-medium mb-2 text-purple-700">NIVEA Loção Deo-Hidratante Milk</h3>
-        <p class="text-gray-600 mb-4 text-sm">Nutrição profunda por 72h para peles secas e ressecadas.</p>
-        <a href="https://amzn.to/4ngSfES" target="_blank" class="block text-center text-white bg-purple-500 px-4 py-2 rounded-full font-semibold shadow-md hover:bg-purple-600 transition">Ver na Amazon</a>
-      </div>
-    </div>
-
+      <!-- Produto: CeraVe Loção Hidratante -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300 animate-fade-in">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="ceraveCarouselImage" src="cerave1.jpg" alt="CeraVe Loção Hidratante" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevCeraveImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextCeraveImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
   </div>
-
-  <!-- Botão para Ver Todos os Produtos -->
-  <div class="mt-8 text-center">
-    <a href="corpo_e_banho.html" class="inline-block text-purple-600 hover:underline text-base font-medium">Ver todos os produtos de Corpo e Banho →</a>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
+    <p class="text-gray-600 mb-4">Com textura fluida e Ácido Hialurônico, ajuda a restaurar a barreira protetora da pele. Ideal para uso diário.</p>
+    <a href="https://amzn.to/4kK4Lem" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
   </div>
-</section>
+</div>
 
-  <!-- Seção Cuidados com o Cabelo - Página Inicial -->
-<section id="cuidados-cabelo" class="py-12 px-4 max-w-6xl mx-auto">
-  <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
-
-  <div class="grid md:grid-cols-3 gap-8">
-
-    <!-- Produto 1 - L'Oréal Elseve Hidra Hialurônico -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="carrossel1" src="loreal1.jpg" alt="L'Oréal Hidra Hialurônico" class="w-full h-full object-contain">
-        <button onclick="prevImg(1)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10094;</button>
-        <button onclick="nextImg(1)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10095;</button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Elseve Hidra Hialurônico</h4>
-        <p class="text-gray-600 mb-4">Hidratação profunda com ácido hialurônico. Ideal para cabelos ressecados. Shampoo 400ml.</p>
-        <a href="https://amzn.to/4bvKxWx" target="_blank"
-           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 transition">
-          Ver na Amazon
-        </a>
-      </div>
-    </div>
-
-    <!-- Produto 2 - Lola Cosmetics Morte Súbita -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="carrossel2" src="lola1.jpg" alt="Lola Morte Súbita" class="w-full h-full object-contain">
-        <button onclick="prevImg(2)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10094;</button>
-        <button onclick="nextImg(2)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10095;</button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">Lola Cosmetics Morte Súbita</h4>
-        <p class="text-gray-600 mb-4">Tratamento semanal para cabelos danificados. Nutre e recupera profundamente.</p>
-        <a href="https://amzn.to/3Vp4jFq" target="_blank"
-           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 transition">
-          Ver na Amazon
-        </a>
-      </div>
-    </div>
-
-    <!-- Produto 3 - Vichy Dercos Energizante -->
-    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
-      <div class="relative w-full h-64 bg-gray-100">
-        <img id="carrossel3" src="vichy1.jpg" alt="Vichy Dercos" class="w-full h-full object-contain">
-        <button onclick="prevImg(3)" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10094;</button>
-        <button onclick="nextImg(3)" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow">&#10095;</button>
-      </div>
-      <div class="p-4">
-        <h4 class="text-lg font-medium mb-2 text-purple-700">Vichy Dercos Energizante</h4>
-        <p class="text-gray-600 mb-4">Fortalece e reduz a queda capilar. Com Aminexil + Vitaminas. Uso diário.</p>
-        <a href="https://amzn.to/3yDWrSh" target="_blank"
-           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 transition">
-          Ver na Amazon
-        </a>
-      </div>
-    </div>
-
+      <!-- Produto: NIVEA Loção Deo-Hidratante Milk -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img src="nivealocao.jpg" alt="NIVEA Loção Milk" class="w-full h-full object-contain transition duration-300 ease-in-out">
   </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Loção Deo-Hidratante Milk 400ml</h4>
+    <p class="text-gray-600 mb-4">Hidratação e nutrição profunda por 72h para uma pele macia e suave. Ideal para peles secas e ressecadas.</p>
+    <a href="https://amzn.to/4ngSfES" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
 
-  <!-- Botão Ver Mais -->
-  <div class="mt-10 flex justify-center">
-    <a href="cuidados_com_o_cabelo.html"
-       class="text-purple-600 border border-purple-500 px-6 py-3 rounded-full font-semibold shadow-md hover:bg-purple-100 transition">
-      Ver mais produtos
+    <!-- Produto: Cetaphil Creme Hidratante -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="cetaphilCarouselImage" src="cetaphil1.jpg" alt="Cetaphil Creme Hidratante" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevCetaphilImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextCetaphilImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Cetaphil Creme Hidratante 453g</h4>
+    <p class="text-gray-600 mb-4">Hidratação intensa para peles secas e sensíveis. Fórmula suave e eficaz, ideal para uso diário.</p>
+    <a href="https://amzn.to/4n30lR4" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
+
+<!-- Produto: Cetaphil Loção Hidratante -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="locaoCarouselImage" src="locao1.jpg" alt="Cetaphil Loção Hidratante" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevLocaoImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextLocaoImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Cetaphil Loção Hidratante 473ml</h4>
+    <p class="text-gray-600 mb-4">Hidratação prolongada com fórmula leve e não oleosa. Ideal para peles sensíveis, com rápida absorção.</p>
+    <a href="https://amzn.to/45X5lke" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
+
+<!-- Produto: MANTECORP Epidrat Calm B5 -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="epidratCarouselImage" src="epidrat1.jpg" alt="Epidrat Calm B5" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevEpidratImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextEpidratImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">MANTECORP Epidrat Calm B5</h4>
+    <p class="text-gray-600 mb-4">Hidratante calmante com D-Pantenol que alivia irritações, promove conforto imediato e hidrata profundamente a pele sensível.</p>
+    <a href="https://amzn.to/3FUlhct" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
+
+<!-- Produto: CeraVe Creme Hidratante Corporal -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="ceraveCremeCarouselImage" src="ceravecreme1.jpg" alt="CeraVe Creme Hidratante" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevCeraveCremeImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextCeraveCremeImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Creme Hidratante Corporal</h4>
+    <p class="text-gray-600 mb-4">Com textura cremosa, ácido hialurônico e 3 ceramidas essenciais, hidrata profundamente e restaura a barreira da pele seca.</p>
+    <a href="https://amzn.to/4l4xxpD" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
+
+<!-- Produto: Mustela Cicastela -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="mustelaCarouselImage" src="mustela1.jpg" alt="Mustela Cicastela" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevMustelaImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextMustelaImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Mustela Cicastela Creme Reparador 40ml</h4>
+    <p class="text-gray-600 mb-4">Repara, hidrata, purifica e acalma a pele dos bebês. Ideal para pequenos machucados, vermelhidão e irritações leves.</p>
+    <a href="https://amzn.to/3HELz33" target="_blank" class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">Ver na Amazon</a>
+  </div>
+</div>
+      
+      <!-- Produto: Bepantol Derma Toque Seco -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="bepantolCarouselImage" src="bepantol1.jpg" alt="Bepantol Derma Toque Seco" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevBepantolImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextBepantolImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Bepantol Derma Toque Seco 30g</h4>
+    <p class="text-gray-600 mb-4">Oil Free, Hidratante facial e corporal. Ideal para peles sensíveis e secas. Textura leve e rápida absorção.</p>
+    <a href="https://amzn.to/3ZxoOUH" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
     </a>
   </div>
-</section>
+</div>
+
+      
+
+    </div>
+  </section>
+
+  <!-- Scripts dos carrosséis -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Carrossel NIVEA
+    const niveaImages = ['nivea1.jpg', 'nivea2.jpg', 'nivea3.jpg', 'nivea4.jpg', 'nivea5.jpg', 'nivea6.jpg', 'nivea7.jpg', 'nivea8.jpg', 'nivea9.jpg'];
+    let niveaIndex = 0;
+    const niveaImageElement = document.getElementById("niveaCarouselImage");
+
+    function showNiveaImage(index) {
+      niveaImageElement.src = niveaImages[index];
+    }
+
+    window.nextNiveaImage = function () {
+      niveaIndex = (niveaIndex + 1) % niveaImages.length;
+      showNiveaImage(niveaIndex);
+    };
+
+    window.prevNiveaImage = function () {
+      niveaIndex = (niveaIndex - 1 + niveaImages.length) % niveaImages.length;
+      showNiveaImage(niveaIndex);
+    };
+
+    // Carrossel CeraVe
+    const ceraveImages = ['cerave1.jpg', 'cerave2.jpg', 'cerave3.jpg', 'cerave4.jpg', 'cerave5.jpg', 'cerave6.jpg', 'cerave7.jpg'];
+    let ceraveIndex = 0;
+    const ceraveImageElement = document.getElementById("ceraveCarouselImage");
+
+    function showCeraveImage(index) {
+      ceraveImageElement.src = ceraveImages[index];
+    }
+
+    window.nextCeraveImage = function () {
+      ceraveIndex = (ceraveIndex + 1) % ceraveImages.length;
+      showCeraveImage(ceraveIndex);
+    };
+
+    window.prevCeraveImage = function () {
+      ceraveIndex = (ceraveIndex - 1 + ceraveImages.length) % ceraveImages.length;
+      showCeraveImage(ceraveIndex);
+    };
+
+    // Carrossel L'Oréal
+    const lorealImages = ['loreal1.jpg', 'loreal2.jpg', 'loreal3.jpg', 'loreal4.jpg', 'loreal5.jpg', 'loreal6.jpg', 'loreal7.jpg'];
+    let lorealIndex = 0;
+    const lorealImageElement = document.getElementById("lorealCarouselImage");
+
+    function showLorealImage(index) {
+      lorealImageElement.src = lorealImages[index];
+    }
+
+    window.nextLorealImage = function () {
+      lorealIndex = (lorealIndex + 1) % lorealImages.length;
+      showLorealImage(lorealIndex);
+    };
+
+    window.prevLorealImage = function () {
+      lorealIndex = (lorealIndex - 1 + lorealImages.length) % lorealImages.length;
+      showLorealImage(lorealIndex);
+    };
+
+    // Carrossel Morte Súbita
+const morteImages = ['morte1.jpg', 'morte2.jpg', 'morte3.jpg', 'morte4.jpg','morte5.jpg', 'morte6.jpg', 'morte7.jpg'];
+let morteIndex = 0;
+const morteImageElement = document.getElementById("morteCarouselImage");
+
+function showMorteImage(index) {
+  morteImageElement.src = morteImages[index];
+}
+
+window.nextMorteImage = function () {
+  morteIndex = (morteIndex + 1) % morteImages.length;
+  showMorteImage(morteIndex);
+};
+
+window.prevMorteImage = function () {
+  morteIndex = (morteIndex - 1 + morteImages.length) % morteImages.length;
+  showMorteImage(morteIndex);
+};
+
+    // Carrossel L'Oréal Professionnel
+const lorealProImages = ['lorealpro1.jpg', 'lorealpro2.jpg', 'lorealpro3.jpg','lorealpro4.jpg', 'lorealpro5.jpg', 'lorealpro6.jpg'];
+let lorealProIndex = 0;
+const lorealProImageElement = document.getElementById("lorealProCarouselImage");
+
+function showLorealProImage(index) {
+  lorealProImageElement.src = lorealProImages[index];
+}
+
+window.nextLorealProImage = function () {
+  lorealProIndex = (lorealProIndex + 1) % lorealProImages.length;
+  showLorealProImage(lorealProIndex);
+};
+
+window.prevLorealProImage = function () {
+  lorealProIndex = (lorealProIndex - 1 + lorealProImages.length) % lorealProImages.length;
+  showLorealProImage(lorealProIndex);
+};
+
+  
+  const cetaphilImages = ['cetaphil1.jpg','cetaphil2.jpg','cetaphil3.jpg','cetaphil4.jpg', 'cetaphil5.jpg','cetaphil6.jpg','cetaphil7.jpg'];
+  
+  let cetaphilIndex = 0;
+  const cetaphilImageElement = document.getElementById("cetaphilCarouselImage");
+
+  function showCetaphilImage(index) {
+    cetaphilImageElement.src = cetaphilImages[index];
+  }
+
+  window.nextCetaphilImage = function () {
+    cetaphilIndex = (cetaphilIndex + 1) % cetaphilImages.length;
+    showCetaphilImage(cetaphilIndex);
+  };
+
+  window.prevCetaphilImage = function () {
+    cetaphilIndex = (cetaphilIndex - 1 + cetaphilImages.length) % cetaphilImages.length;
+    showCetaphilImage(cetaphilIndex);
+  };
+
+     const locaoImages = [
+    'locao1.jpg',
+    'locao2.jpg',
+    'locao3.jpg',
+    'locao4.jpg',
+    'locao5.jpg',
+    'locao6.jpg'
+  ];
+
+  let locaoIndex = 0;
+  const locaoImageElement = document.getElementById("locaoCarouselImage");
+
+  function showLocaoImage(index) {
+    locaoImageElement.src = locaoImages[index];
+  }
+
+  window.nextLocaoImage = function () {
+    locaoIndex = (locaoIndex + 1) % locaoImages.length;
+    showLocaoImage(locaoIndex);
+  };
+
+  window.prevLocaoImage = function () {
+    locaoIndex = (locaoIndex - 1 + locaoImages.length) % locaoImages.length;
+    showLocaoImage(locaoIndex);
+  };
+
+const epidratImages = [
+    'epidrat1.jpg',
+    'epidrat2.jpg',
+    'epidrat3.jpg',
+    'epidrat4.jpg',
+    'epidrat5.jpg',
+    'epidrat6.jpg'
+  ];
+
+  let epidratIndex = 0;
+  const epidratImageElement = document.getElementById("epidratCarouselImage");
+
+  function showEpidratImage(index) {
+    epidratImageElement.src = epidratImages[index];
+  }
+
+  window.nextEpidratImage = function () {
+    epidratIndex = (epidratIndex + 1) % epidratImages.length;
+    showEpidratImage(epidratIndex);
+  };
+
+  window.prevEpidratImage = function () {
+    epidratIndex = (epidratIndex - 1 + epidratImages.length) % epidratImages.length;
+    showEpidratImage(epidratIndex);
+  };
+
+     const ceraveCremeImages = [
+    'ceravecreme1.jpg',
+    'ceravecreme2.jpg',
+    'ceravecreme3.jpg',
+    'ceravecreme4.jpg',
+    'ceravecreme5.jpg',
+    'ceravecreme6.jpg',
+    'ceravecreme7.jpg',
+    'ceravecreme8.jpg'
+  ];
+
+  let ceraveCremeIndex = 0;
+  const ceraveCremeImageElement = document.getElementById("ceraveCremeCarouselImage");
+
+  function showCeraveCremeImage(index) {
+    ceraveCremeImageElement.src = ceraveCremeImages[index];
+  }
+
+  window.nextCeraveCremeImage = function () {
+    ceraveCremeIndex = (ceraveCremeIndex + 1) % ceraveCremeImages.length;
+    showCeraveCremeImage(ceraveCremeIndex);
+  };
+
+  window.prevCeraveCremeImage = function () {
+    ceraveCremeIndex = (ceraveCremeIndex - 1 + ceraveCremeImages.length) % ceraveCremeImages.length;
+    showCeraveCremeImage(ceraveCremeIndex);
+  };
+
+     const mustelaImages = [
+    'mustela1.jpg',
+    'mustela2.jpg',
+    'mustela3.jpg',
+    'mustela4.jpg',
+    'mustela5.jpg',
+    'mustela6.jpg',
+    'mustela7.jpg'
+  ];
+
+  let mustelaIndex = 0;
+  const mustelaImageElement = document.getElementById("mustelaCarouselImage");
+
+  function showMustelaImage(index) {
+    mustelaImageElement.src = mustelaImages[index];
+  }
+
+  window.nextMustelaImage = function () {
+    mustelaIndex = (mustelaIndex + 1) % mustelaImages.length;
+    showMustelaImage(mustelaIndex);
+  };
+
+  window.prevMustelaImage = function () {
+    mustelaIndex = (mustelaIndex - 1 + mustelaImages.length) % mustelaImages.length;
+    showMustelaImage(mustelaIndex);
+  };
+
+// Carrossel Bepantol Derma
+const bepantolImages = [
+  'bepantol1.jpg',
+  'bepantol2.jpg',
+  'bepantol3.jpg',
+  'bepantol4.jpg',
+  'bepantol5.jpg',
+  'bepantol6.jpg'
+];
+let bepantolIndex = 0;
+const bepantolImageElement = document.getElementById("bepantolCarouselImage");
+
+function showBepantolImage(index) {
+  bepantolImageElement.src = bepantolImages[index];
+}
+
+window.nextBepantolImage = function () {
+  bepantolIndex = (bepantolIndex + 1) % bepantolImages.length;
+  showBepantolImage(bepantolIndex);
+};
+
+window.prevBepantolImage = function () {
+  bepantolIndex = (bepantolIndex - 1 + bepantolImages.length) % bepantolImages.length;
+  showBepantolImage(bepantolIndex);
+};
+
+    // Carrossel Rapunzel
+const rapunzelImages = [
+  'rapunzel1.jpg','rapunzel2.jpg','rapunzel3.jpg','rapunzel4.jpg','rapunzel5.jpg',
+  'rapunzel6.jpg','rapunzel7.jpg','rapunzel8.jpg','rapunzel9.jpg'
+];
+let rapunzelIndex = 0;
+const rapunzelImageElement = document.getElementById("rapunzelCarouselImage");
+
+function showRapunzelImage(index) {
+  rapunzelImageElement.src = rapunzelImages[index];
+}
+window.nextRapunzelImage = function () {
+  rapunzelIndex = (rapunzelIndex + 1) % rapunzelImages.length;
+  showRapunzelImage(rapunzelIndex);
+};
+window.prevRapunzelImage = function () {
+  rapunzelIndex = (rapunzelIndex - 1 + rapunzelImages.length) % rapunzelImages.length;
+  showRapunzelImage(rapunzelIndex);
+};
+
+// Carrossel Cicatri Renov
+const cicatriImages = [
+  'cicatri1.jpg','cicatri2.jpg','cicatri3.jpg','cicatri4.jpg',
+  'cicatri5.jpg','cicatri6.jpg','cicatri7.jpg','cicatri8.jpg'
+];
+let cicatriIndex = 0;
+const cicatriImageElement = document.getElementById("cicatriCarouselImage");
+
+function showCicatriImage(index) {
+  cicatriImageElement.src = cicatriImages[index];
+}
+window.nextCicatriImage = function () {
+  cicatriIndex = (cicatriIndex + 1) % cicatriImages.length;
+  showCicatriImage(cicatriIndex);
+};
+window.prevCicatriImage = function () {
+  cicatriIndex = (cicatriIndex - 1 + cicatriImages.length) % cicatriImages.length;
+  showCicatriImage(cicatriIndex);
+};
+
+// Carrossel Danos Vorazes
+const danosImages = [
+  'danos1.jpg','danos2.jpg','danos3.jpg','danos4.jpg',
+  'danos5.jpg','danos6.jpg'
+];
+let danosIndex = 0;
+const danosImageElement = document.getElementById("danosCarouselImage");
+
+function showDanosImage(index) {
+  danosImageElement.src = danosImages[index];
+}
+window.nextDanosImage = function () {
+  danosIndex = (danosIndex + 1) % danosImages.length;
+  showDanosImage(danosIndex);
+};
+window.prevDanosImage = function () {
+  danosIndex = (danosIndex - 1 + danosImages.length) % danosImages.length;
+  showDanosImage(danosIndex);
+};
+    
+// Carrossel Vichy
+const vichyImages = [
+  'vichy1.jpg','vichy2.jpg','vichy3.jpg','vichy4.jpg','vichy5.jpg',
+  'vichy6.jpg','vichy7.jpg','vichy8.jpg','vichy9.jpg','vichy10.jpg'
+];
+let vichyIndex = 0;
+const vichyImageElement = document.getElementById("vichyCarouselImage");
+
+function showVichyImage(index) {
+  vichyImageElement.src = vichyImages[index];
+}
+window.nextVichyImage = function () {
+  vichyIndex = (vichyIndex + 1) % vichyImages.length;
+  showVichyImage(vichyIndex);
+};
+window.prevVichyImage = function () {
+  vichyIndex = (vichyIndex - 1 + vichyImages.length) % vichyImages.length;
+  showVichyImage(vichyIndex);
+};
+
+// Carrossel Truss
+const trussImages = ['truss1.jpg','truss2.jpg','truss3.jpg','truss4.jpg'];
+let trussIndex = 0;
+const trussImageElement = document.getElementById("trussCarouselImage");
+
+function showTrussImage(index) {
+  trussImageElement.src = trussImages[index];
+}
+window.nextTrussImage = function () {
+  trussIndex = (trussIndex + 1) % trussImages.length;
+  showTrussImage(trussIndex);
+};
+window.prevTrussImage = function () {
+  trussIndex = (trussIndex - 1 + trussImages.length) % trussImages.length;
+  showTrussImage(trussIndex);
+};
+
+// Carrossel Shampoo Inforcer
+const shampoImages = [
+  'shampo1.jpg','shampo2.jpg','shampo3.jpg','shampo4.jpg',
+  'shampo5.jpg','shampo6.jpg','shampo7.jpg','shampo8.jpg',
+  'shampo9.jpg','shampo10.jpg','shampo11.jpg'
+];
+let shampoIndex = 0;
+const shampoImageElement = document.getElementById("shampoCarouselImage");
+
+function showShampoImage(index) {
+  shampoImageElement.src = shampoImages[index];
+}
+window.nextShampoImage = function () {
+  shampoIndex = (shampoIndex + 1) % shampoImages.length;
+  showShampoImage(shampoIndex);
+};
+window.prevShampoImage = function () {
+  shampoIndex = (shampoIndex - 1 + shampoImages.length) % shampoImages.length;
+  showShampoImage(shampoIndex);
+};
+    
+  });
+
+
+</script>
+    
+  <!-- Seções cuidados com o cabelo -->
+  <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+<!-- Produto: L'Oréal Elseve Óleo Extraordinário -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="lorealCarouselImage" src="loreal1.jpg" alt="Elseve Óleo Extraordinário" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevLorealImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextLorealImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Paris Elseve Óleo Finalizador Óleo Extraordinário</h4>
+    <p class="text-gray-600 mb-4">Anti Frizz, Protetor Térmico, nutre os fios e proporciona brilho e leveza. Ideal para todos os tipos de cabelo. 100ml.</p>
+    <a href="https://amzn.to/4e3HW2I" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Morte Súbita Lola Cosmetics -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="morteCarouselImage" src="morte1.jpg" alt="Morte Súbita Máscara" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevMorteImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextMorteImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Morte Súbita Máscara Super Hidratante 450g</h4>
+    <p class="text-gray-600 mb-4">Da Lola Cosmetics, hidratação profunda e imediata para cabelos danificados. Restaura os fios e devolve brilho e maciez.</p>
+    <a href="https://amzn.to/45VmbzX" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: L'Oréal Professionnel Óleo 10 em 1 -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="lorealProCarouselImage" src="lorealpro1.jpg" alt="L'Oréal Professionnel Óleo 10 em 1" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevLorealProImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextLorealProImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Óleo 10 em 1 Absolut Repair</h4>
+    <p class="text-gray-600 mb-4">Multi-benefícios para cabelos secos e danificados. Repara, dá brilho e nutre com Gold Quinoa e Proteínas.</p>
+    <a href="https://amzn.to/3FZtEn5" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Rapunzel Growth Tônico Capilar -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="rapunzelCarouselImage" src="rapunzel1.jpg" alt="Rapunzel Growth Tônico Capilar" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevRapunzelImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextRapunzelImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Rapunzel Growth Tônico Capilar 250ml</h4>
+    <p class="text-gray-600 mb-4">Estimula o crescimento capilar e fortalece os fios. Fórmula vegana da Lola Cosmetics.</p>
+    <a href="https://amzn.to/4kK4hVA" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+<!-- Produto: Leave-In Cicatri Renov -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="cicatriCarouselImage" src="cicatri1.jpg" alt="Leave-In Cicatri Renov" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevCicatriImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextCicatriImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Leave-In Elseve Cicatri Renov 100ml</h4>
+    <p class="text-gray-600 mb-4">Reparação instantânea e proteção térmica para cabelos danificados.</p>
+    <a href="https://amzn.to/441npXI" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Danos Vorazes Óleo Reparador -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="danosCarouselImage" src="danos1.jpg" alt="Danos Vorazes Óleo Reparador" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevDanosImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextDanosImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Óleo Reparador Danos Vorazes 50ml</h4>
+    <p class="text-gray-600 mb-4">Restaura pontas duplas, dá brilho intenso e sela os fios. Fórmula Lola Cosmetics.</p>
+    <a href="https://amzn.to/44eYEZs" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Vichy Shampoo Energy+ -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="vichyCarouselImage" src="vichy1.jpg" alt="Vichy Shampoo Energy+" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevVichyImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextVichyImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Vichy Shampoo Antiqueda Energy+ 400g</h4>
+    <p class="text-gray-600 mb-4">Estimulante e fortalecedor para cabelos fracos e quebradiços. Auxilia no combate à queda.</p>
+    <a href="https://amzn.to/3SQW9Gw" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Truss Óleo Reconstrutor -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="trussCarouselImage" src="truss1.jpg" alt="Truss Uso Obrigatório" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevTrussImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextTrussImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Truss Uso Obrigatório 30ml</h4>
+    <p class="text-gray-600 mb-4">Reconstrução, brilho e proteção para todos os tipos de cabelo. Fórmula premium.</p>
+    <a href="https://amzn.to/4jVSTET" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+<!-- Produto: L'Oréal Inforcer Shampoo -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="shampoCarouselImage" src="shampo1.jpg" alt="Shampoo L'Oréal Inforcer" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevShampoImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextShampoImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Inforcer Shampoo 300ml</h4>
+    <p class="text-gray-600 mb-4">Com Biotina. Protege, fortalece e previne quebras. Ideal para cabelos frágeis e danificados.</p>
+    <a href="https://amzn.to/440rrjj" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition hover:bg-purple-600 hover:scale-105">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+      
+    </div>
+  </section>
+
+
+  <!-- Rodapé -->
+  <footer class="py-6 text-center text-gray-600 border-t mt-12">
+    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const menuLinks = menu.querySelectorAll("a");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menu.classList.toggle("-translate-x-full", !isOpen);
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        isOpen = false;
+        menu.classList.add("-translate-x-full");
+      });
+    });
+  </script>
+
+</body>
+</html>
