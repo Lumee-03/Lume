@@ -281,7 +281,7 @@
 
 
 
-  <!-- Rodapé -->
+<!-- Rodapé -->
   <footer class="py-6 text-center text-gray-600 border-t mt-12">
     <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
   </footer>
@@ -305,53 +305,6 @@
       });
     });
   </script>
-
-<script>
-  async function carregarProdutos() {
-    const resposta = await fetch('/Lume/produtos.json');
-    return await resposta.json();
-  }
-
-  const inputBusca = document.getElementById('buscaInput');
-  const resultadosDiv = document.getElementById('resultadosBusca');
-
-  let produtos = [];
-
-  carregarProdutos().then(dados => produtos = dados);
-
-  inputBusca.addEventListener('input', () => {
-    const termo = inputBusca.value.toLowerCase();
-    resultadosDiv.innerHTML = '';
-
-    if (termo.length < 2) {
-      resultadosDiv.classList.add('hidden');
-      return;
-    }
-
-    const encontrados = produtos.filter(produto =>
-      produto.nome.toLowerCase().includes(termo)
-    );
-
-    if (encontrados.length > 0) {
-      encontrados.forEach(produto => {
-        const div = document.createElement('div');
-        div.className = 'resultado-item px-4 py-2 hover:bg-gray-100';
-        div.innerHTML = `<a href="${produto.link}" target="_blank">${produto.nome}</a>`;
-        resultadosDiv.appendChild(div);
-      });
-      resultadosDiv.classList.remove('hidden');
-    } else {
-      resultadosDiv.classList.add('hidden');
-    }
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!document.querySelector('.barra-busca')?.contains(e.target)) {
-      resultadosDiv.classList.add('hidden');
-    }
-  });
-</script>
-
   
 </body>
 </html>
