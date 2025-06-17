@@ -9,43 +9,15 @@
     .menu-slide {
       transition: transform 0.3s ease-in-out;
     }
-    
-  .barra-busca {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 9999;
-}
 
-.barra-busca input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 16px;
+    body {
+  padding-top: 110px;
   font-family: 'Inter', sans-serif;
-  outline: none;
-}
-
-.resultados-busca {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 10px;
-  margin-top: 5px;
-  display: none;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
 .resultado-item {
-  padding: 8px 6px;
-  border-bottom: 1px solid #eee;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 .resultado-item:last-child {
@@ -56,17 +28,9 @@
   color: #d946ef;
   font-weight: 600;
   text-decoration: none;
-  display: block;
+  font-size: 14px;
 }
-
-body {
-  padding-top: 110px;
-}
-
-    
-body {
-  padding-top: 110px; /* Espaço para a barra fixa */
-}
+ 
   </style>
   
 </head>
@@ -75,10 +39,25 @@ body {
     <img src="logo.png" alt="Logo Lume" class="mx-auto h-40">
   </div>
 
-  <div class="barra-busca">
-  <input type="text" id="buscaInput" placeholder="Buscar produtos..." />
-  <div id="resultadosBusca" class="resultados-busca"></div>
+ <div class="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-4 py-3"> 
+  <div class="max-w-3xl mx-auto relative">
+    <div class="flex items-center gap-2 bg-gray-100 border border-gray-300 rounded-full px-4 py-2 shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+        type="text"
+        id="buscaInput"
+        placeholder="Buscar produtos..."
+        class="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm"
+      />
+    </div>
+    <div id="resultadosBusca" class="absolute w-full bg-white border border-gray-200 rounded-lg mt-2 shadow-lg hidden max-h-64 overflow-y-auto z-50">
+      <!-- Resultados vão aqui -->
+    </div>
+  </div>
 </div>
+
 
 
  <!-- Menu lateral -->
