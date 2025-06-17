@@ -9,8 +9,8 @@
     .menu-slide {
       transition: transform 0.3s ease-in-out;
     }
-
-    .barra-busca {
+    
+  barra-busca {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,12 +19,10 @@
   padding: 10px 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .barra-busca input {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -35,21 +33,18 @@
 
 .resultados-busca {
   background: #fff;
-  max-height: 300px;
-  overflow-y: auto;
   border: 1px solid #e5e5e5;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   padding: 10px;
+  margin-top: 5px;
   display: none;
-  position: relative;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .resultado-item {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  gap: 10px;
+  padding: 8px 6px;
   border-bottom: 1px solid #eee;
 }
 
@@ -57,23 +52,23 @@
   border-bottom: none;
 }
 
-.resultado-item img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
 .resultado-item a {
   color: #d946ef;
   font-weight: 600;
   text-decoration: none;
+  display: block;
 }
 
+body {
+  padding-top: 110px;
+}
+
+    
 body {
   padding-top: 110px; /* Espaço para a barra fixa */
 }
   </style>
+  
 </head>
 <body class="bg-white text-gray-800 font-sans relative">
   <div class="text-center py-6">
@@ -298,8 +293,7 @@ body {
     }
 
     const resultados = produtos.filter(p =>
-      p.nome.toLowerCase().includes(filtro.toLowerCase()) ||
-      p.descricao.toLowerCase().includes(filtro.toLowerCase())
+      p.nome.toLowerCase().includes(filtro.toLowerCase())
     );
 
     if (resultados.length === 0) {
@@ -309,11 +303,7 @@ body {
         const item = document.createElement('div');
         item.className = 'resultado-item';
         item.innerHTML = `
-          <img src="/Lume/imagens/${p.imagem}" alt="${p.nome}" />
-          <div>
-            <a href="${p.link}" target="_blank">${p.nome}</a>
-            <p style="margin: 4px 0; font-size: 14px;">${p.descricao}</p>
-          </div>
+          <a href="${p.link}" target="_blank">${p.nome}</a>
         `;
         container.appendChild(item);
       });
