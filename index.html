@@ -2,151 +2,210 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lume - Beleza e Cuidados</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding-top: 80px;
-      background: #fff;
-      color: #333;
-    }
-
-    /* Barra de busca fixa */
-    #barra-busca {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 10px 20px;
-      z-index: 1000;
-    }
-
-    #barra-busca input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    /* Resultados */
-    #resultados-busca {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      max-height: 350px;
-      overflow-y: auto;
-      background: #fff;
-      z-index: 999;
-    }
-
-    .resultado-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 10px 20px;
-      border-bottom: 1px solid #eee;
-      transition: background 0.2s;
-    }
-
-    .resultado-item:hover {
-      background: #f8f8f8;
-    }
-
-    .resultado-item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .resultado-item a {
-      display: inline-block;
-      margin-top: 4px;
-      color: #d946ef;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .resultado-texto {
-      flex: 1;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h1 {
-      font-weight: 600;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
+    .menu-slide {
+      transition: transform 0.3s ease-in-out;
     }
   </style>
 </head>
-<body>
-
-  <!-- Barra de busca -->
-  <div id="barra-busca">
-    <input type="text" id="campo-busca" placeholder="Buscar produtos de beleza, corpo, cabelo..." />
-    <div id="resultados-busca"></div>
+<body class="bg-white text-gray-800 font-sans relative">
+  <div class="text-center py-6">
+    <img src="logo.png" alt="Logo Lume" class="mx-auto h-40">
   </div>
 
-  <!-- Conteúdo inicial -->
-  <div class="container">
-    <h1>Bem-vinda à Lume 💫</h1>
-    <p>Descubra os melhores produtos de beleza, corpo e cuidados pessoais indicados especialmente para você.</p>
-    <p>Use a busca acima para encontrar rapidamente o que você procura!</p>
+
+ <!-- Menu lateral -->
+<div id="menu" class="fixed top-0 left-0 h-full w-64 bg-pink-100 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+  <div class="p-6">
+    <h2 class="text-2xl font-bold text-purple-700 mb-4">Categorias</h2>
+    <ul class="space-y-4">
+      <li><a href="index.html" class="text-purple-600 hover:text-purple-800">Início</a></li>
+      <li><a href="corpo_e_banho.html" class="text-purple-600 hover:text-purple-800">Corpo e Banho</a></li>
+      <li><a href="cuidados_com_o_cabelo.html" class="text-purple-600 hover:text-purple-800">Cuidados com o Cabelo</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Botão hambúrguer flutuante -->
+<button id="menuBtn" aria-label="Abrir menu"
+  class="fixed top-4 left-4 transition-all duration-300 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+    <path fill-rule="evenodd"
+      d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
+      clip-rule="evenodd" />
+  </svg>
+</button>
+
+<script>
+  const menu = document.getElementById("menu");
+  const menuBtn = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  menuBtn.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+
+    if (menuOpen) {
+      menu.classList.remove("-translate-x-full");
+      menu.classList.add("translate-x-0");
+
+      // Move o botão para a direita
+      menuBtn.classList.remove("left-4");
+      menuBtn.classList.add("left-72"); // equivale a 18rem (largura do menu + espaço)
+    } else {
+      menu.classList.remove("translate-x-0");
+      menu.classList.add("-translate-x-full");
+
+      // Volta o botão para a posição original
+      menuBtn.classList.remove("left-72");
+      menuBtn.classList.add("left-4");
+    }
+  });
+</script>
+
+
+  <!-- Hero -->
+  <section class="text-center py-12 bg-pink-100">
+    <h2 class="text-4xl font-semibold mb-4 text-purple-700">Produtos para Jovens e Modernas</h2>
+    <p class="text-lg text-gray-700 mb-6 max-w-xl mx-auto">Descubra tendências que combinam com seu estilo e realce sua beleza com nossos produtos exclusivos de afiliados.</p>
+    <a href="#corpo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
+  </section>
+  
+
+<!-- Seção Corpo e Banho (destaques) -->
+<section id="corpo" class="py-12 px-4 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Corpo e Banho</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- Produto 1: NIVEA Sabonete Líquido -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <div class="relative w-full h-64 bg-gray-100">
+        <img src="nivea1.jpg" alt="NIVEA Sabonete Líquido" class="w-full h-full object-contain">
+      </div>
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">NIVEA Sabonete Líquido Óleo de Banho 200ml</h4>
+        <p class="text-gray-600 mb-4">Com 55% de óleos naturais, espuma cremosa e hidratação intensa para a pele.</p>
+        <a href="https://amzn.to/3HHh6RH" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+      </div>
+    </div>
+
+    <!-- Produto 2: CeraVe Loção Hidratante -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <div class="relative w-full h-64 bg-gray-100">
+        <img src="cerave1.jpg" alt="CeraVe Loção Hidratante" class="w-full h-full object-contain">
+      </div>
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">CeraVe Loção Hidratante Corporal</h4>
+        <p class="text-gray-600 mb-4">Com ácido hialurônico, restaura a barreira da pele. Textura leve para uso diário.</p>
+        <a href="https://amzn.to/4kK4Lem" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+      </div>
+    </div>
+
+    <!-- Produto 3: Cetaphil Creme Hidratante -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <div class="relative w-full h-64 bg-gray-100">
+        <img src="cetaphil1.jpg" alt="Cetaphil Creme Hidratante" class="w-full h-full object-contain">
+      </div>
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">Cetaphil Creme Hidratante 453g</h4>
+        <p class="text-gray-600 mb-4">Ideal para peles secas e sensíveis. Fórmula eficaz com hidratação intensa.</p>
+        <a href="https://amzn.to/4n30lR4" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold hover:bg-purple-600 hover:scale-105 transition">Ver na Amazon</a>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Script da busca -->
+  <!-- Botão Ver mais -->
+  <div class="mt-8 text-center">
+    <a href="corpo_e_banho.html"
+       class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
+  </div>
+</section> 
+
+  <!-- Seção: Cuidados com o Cabelo -->
+<section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-semibold mb-6 text-center text-purple-700">Cuidados com o Cabelo</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- Produto 1 -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="loreal1.jpg" alt="Elseve Óleo Extraordinário" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Paris Elseve Óleo Extraordinário</h4>
+        <p class="text-gray-600 mb-4">Anti Frizz, protetor térmico, nutrição e brilho. Ideal para todos os tipos de cabelo. 100ml.</p>
+        <a href="https://amzn.to/4e3HW2I" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">
+          Ver na Amazon
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="morte1.jpg" alt="Morte Súbita Máscara" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">Morte Súbita Máscara Super Hidratante 450g</h4>
+        <p class="text-gray-600 mb-4">Hidratação profunda para cabelos danificados. Restaura brilho e maciez.</p>
+        <a href="https://amzn.to/45VmbzX" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">
+          Ver na Amazon
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="lorealpro1.jpg" alt="L'Oréal Óleo 10 em 1" class="w-full h-64 object-contain bg-gray-100">
+      <div class="p-4">
+        <h4 class="text-lg font-medium mb-2 text-purple-700">L'Oréal Professionnel Óleo 10 em 1 Absolut Repair</h4>
+        <p class="text-gray-600 mb-4">Reparação profunda com brilho e nutrição. Com Gold Quinoa e Proteínas.</p>
+        <a href="https://amzn.to/3FZtEn5" target="_blank"
+           class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105">
+          Ver na Amazon
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Botão Ver Mais (padrão visual) -->
+<div class="mt-8 text-center">
+  <a href="cuidados_com_o_cabelo.html"
+  class="inline-block text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition">Ver mais</a>
+  </a>
+</div>
+
+  
+  <!-- Rodapé -->
+  <footer class="py-6 text-center text-gray-600 border-t mt-12">
+    <p>&copy; 2025 Lume. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do menu -->
   <script>
-    let produtos = [];
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const menuLinks = menu.querySelectorAll("a");
+    let isOpen = false;
 
-    fetch('https://lumee-03.github.io/Lume/produtos.json')
-      .then(r => r.json())
-      .then(data => produtos = data);
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menu.classList.toggle("-translate-x-full", !isOpen);
+    });
 
-    document.getElementById('campo-busca').addEventListener('input', function () {
-      const termo = this.value.toLowerCase();
-      const res = document.getElementById('resultados-busca');
-      res.innerHTML = '';
-
-      if (termo.length < 2) return;
-
-      const encontrados = produtos.filter(p =>
-        p.nome.toLowerCase().includes(termo) ||
-        p.descricao.toLowerCase().includes(termo)
-      );
-
-      encontrados.forEach(p => {
-        const item = document.createElement('div');
-        item.className = 'resultado-item';
-        item.innerHTML = `
-          <img src="${p.imagem}" alt="${p.nome}">
-          <div class="resultado-texto">
-            <strong>${p.nome}</strong><br>
-            <small>${p.descricao}</small><br>
-            <a href="${p.link}" target="_blank">Ver na Amazon</a>
-          </div>
-        `;
-        res.appendChild(item);
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        isOpen = false;
+        menu.classList.add("-translate-x-full");
       });
     });
   </script>
+  
 </body>
 </html>
