@@ -46,13 +46,13 @@
     "descricao": "Reconstrução, brilho e proteção para todos os tipos de cabelo. Fórmula premium.",
     "imagem": "truss1.jpg",
     "link": "https://amzn.to/4jVSTET"
-  }
+  },
   {
-  "nome": "L'Oréal Professionnel Inforcer Shampoo 300ml",
-  "descricao": "Com Biotina. Protege, fortalece e previne quebras. Ideal para cabelos frágeis e danificados.",
-  "imagem": "shampo1.jpg",
-  "link": "https://amzn.to/440rrjj"
-}
+    "nome": "L'Oréal Professionnel Inforcer Shampoo 300ml",
+    "descricao": "Com Biotina. Protege, fortalece e previne quebras. Ideal para cabelos frágeis e danificados.",
+    "imagem": "shampo1.jpg",
+    "link": "https://amzn.to/440rrjj"
+  },
   {
     "nome": "NIVEA Sabonete Líquido Óleo de Banho 200ml",
     "descricao": "Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.",
@@ -88,7 +88,7 @@
     "descricao": "Hidratante calmante com D-Pantenol que alivia irritações, promove conforto imediato e hidrata profundamente a pele sensível.",
     "imagem": "epidrat1.jpg",
     "link": "https://amzn.to/3FUlhct"
-  }
+  },
   {
     "nome": "CeraVe Creme Hidratante Corporal",
     "descricao": "Com textura cremosa, ácido hialurônico e 3 ceramidas essenciais, hidrata profundamente e restaura a barreira da pele seca.",
@@ -108,4 +108,3 @@
     "link": "https://amzn.to/3ZxoOUH"
   }
 ]
-
