@@ -217,6 +217,23 @@
   </div>
 </div>
 
+      <!-- Produto: Sérum L'Oréal Paris Elseve Liso dos Sonhos -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="serumCarouselImage" src="serum1.jpg" alt="Sérum L'Oréal Paris Elseve Liso dos Sonhos" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevSerumImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextSerumImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Sérum L'Oréal Paris Elseve Liso dos Sonhos 100ml</h4>
+    <p class="text-gray-600 mb-4">Sérum antifrizz com queratina vegetal e manteiga de cacau. Alinha os fios, protege do calor e deixa o cabelo macio, liso e perfumado por muito mais tempo.</p>
+    <a href="https://amzn.to/43UB7wY" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
       <!-- Produto: Rapunzel Growth Tônico Capilar -->
 <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
   <div class="relative w-full h-64 bg-gray-100">
@@ -609,6 +626,18 @@
   function prevRpshampooImage() {
     rpshampooIndex = (rpshampooIndex - 1 + rpshampooImages.length) % rpshampooImages.length;
     document.getElementById('rpshampooCarouselImage').src = rpshampooImages[rpshampooIndex];
+  }
+
+   // Produto: Sérum L'Oréal Paris Elseve Liso dos Sonhos
+    const serumImages = ['serum1.jpg', 'serum2.jpg', 'serum3.jpg', 'serum4.jpg', 'serum5.jpg', 'serum6.jpg', 'serum7.jpg'];
+  let serumIndex = 0;
+  function nextSerumImage() {
+    serumIndex = (serumIndex + 1) % serumImages.length;
+    document.getElementById('serumCarouselImage').src = serumImages[serumIndex];
+  }
+  function prevSerumImage() {
+    serumIndex = (serumIndex - 1 + serumImages.length) % serumImages.length;
+    document.getElementById('serumCarouselImage').src = serumImages[serumIndex];
   }
 
    
