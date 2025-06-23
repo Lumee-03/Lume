@@ -234,6 +234,57 @@
   </div>
 </div>
 
+        <!-- Produto: Rapunzel Milk Leave-in Spray Lola Cosmetics -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="rpCarouselImage" src="rp1.jpg" alt="Rapunzel Milk Leave-in Spray Lola Cosmetics" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevRpImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextRpImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Lola Cosmetics Rapunzel Milk Leave-in Spray 250ml</h4>
+    <p class="text-gray-600 mb-4">Leave-in em spray para fortalecimento e crescimento saudável dos cabelos. Leve, nutritivo, com proteção térmica e ideal para uso diário.</p>
+    <a href="https://amzn.to/4lcHWjg" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+       <!-- Produto: Rapunzel Máscara de Tratamento Lola Cosmetics -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="rpmascaraCarouselImage" src="rpmascara1.jpg" alt="Rapunzel Máscara de Tratamento Lola Cosmetics" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevRpmascaraImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextRpmascaraImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Lola Cosmetics Rapunzel Máscara de Tratamento 450g</h4>
+    <p class="text-gray-600 mb-4">Máscara fortalecedora para auxiliar no crescimento capilar saudável. Nutre, hidrata e fortalece os fios da raiz às pontas. Liberada e vegana.</p>
+    <a href="https://amzn.to/4jZaLP3" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
+      <!-- Produto: Rapunzel Shampoo Rejuvenescedor Lola Cosmetics -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="rpshampooCarouselImage" src="rpshampoo1.jpg" alt="Rapunzel Shampoo Rejuvenescedor Lola Cosmetics" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevRpshampooImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextRpshampooImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Lola Cosmetics Rapunzel Shampoo Rejuvenescedor 250ml</h4>
+    <p class="text-gray-600 mb-4">Shampoo estimulante para o crescimento saudável dos cabelos. Limpa suavemente, ativa a circulação do couro cabeludo e fortalece os fios desde a raiz.</p>
+    <a href="https://amzn.to/4kOftAo" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
+
 <!-- Produto: Leave-In Cicatri Renov -->
 <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
   <div class="relative w-full h-64 bg-gray-100">
@@ -320,10 +371,6 @@
     </a>
   </div>
 </div>
-
-    
-
-     
 
       <!-- Produto: Dream Cream Máscara de Hidratação Lola Cosmetics -->
 <div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
@@ -526,6 +573,42 @@
   function prevMssprayImage() {
     mssprayIndex = (mssprayIndex - 1 + mssprayImages.length) % mssprayImages.length;
     document.getElementById('mssprayCarouselImage').src = mssprayImages[mssprayIndex];
+  }
+
+   // Produto: Rapunzel Milk Leave-in Spray Lola Cosmetics
+   const rpImages = ['rp1.jpg', 'rp2.jpg', 'rp3.jpg', 'rp4.jpg', 'rp5.jpg', 'rp6.jpg'];
+  let rpIndex = 0;
+  function nextRpImage() {
+    rpIndex = (rpIndex + 1) % rpImages.length;
+    document.getElementById('rpCarouselImage').src = rpImages[rpIndex];
+  }
+  function prevRpImage() {
+    rpIndex = (rpIndex - 1 + rpImages.length) % rpImages.length;
+    document.getElementById('rpCarouselImage').src = rpImages[rpIndex];
+  }
+
+   //Produto: Rapunzel Máscara de Tratamento Lola Cosmetics
+   const rpmascaraImages = ['rpmascara1.jpg', 'rpmascara2.jpg', 'rpmascara3.jpg', 'rpmascara4.jpg', 'rpmascara5.jpg', 'rpmascara6.jpg'];
+  let rpmascaraIndex = 0;
+  function nextRpmascaraImage() {
+    rpmascaraIndex = (rpmascaraIndex + 1) % rpmascaraImages.length;
+    document.getElementById('rpmascaraCarouselImage').src = rpmascaraImages[rpmascaraIndex];
+  }
+  function prevRpmascaraImage() {
+    rpmascaraIndex = (rpmascaraIndex - 1 + rpmascaraImages.length) % rpmascaraImages.length;
+    document.getElementById('rpmascaraCarouselImage').src = rpmascaraImages[rpmascaraIndex];
+  }
+
+   // Produto: Rapunzel Shampoo Rejuvenescedor Lola Cosmetics
+    const rpshampooImages = ['rpshampoo1.jpg', 'rpshampoo2.jpg', 'rpshampoo3.jpg', 'rpshampoo4.jpg', 'rpshampoo5.jpg', 'rpshampoo6.jpg'];
+  let rpshampooIndex = 0;
+  function nextRpshampooImage() {
+    rpshampooIndex = (rpshampooIndex + 1) % rpshampooImages.length;
+    document.getElementById('rpshampooCarouselImage').src = rpshampooImages[rpshampooIndex];
+  }
+  function prevRpshampooImage() {
+    rpshampooIndex = (rpshampooIndex - 1 + rpshampooImages.length) % rpshampooImages.length;
+    document.getElementById('rpshampooCarouselImage').src = rpshampooImages[rpshampooIndex];
   }
 
    
