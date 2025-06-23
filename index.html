@@ -47,17 +47,47 @@
     </div>
   </div>
 
- <!-- Botão hambúrguer flutuante -->
-<button id="menuBtn" aria-label="Abrir menu"
-  class="fixed top-4 left-4 transition-transform duration-300 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
-  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-    <path fill-rule="evenodd"
-      d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
-      clip-rule="evenodd" />
-  </svg>
-</button>
+  <!-- Botão hambúrguer flutuante com deslizamento -->
+  <button id="menuBtn" aria-label="Abrir menu"
+    class="fixed top-4 left-4 transition-transform duration-300 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd"
+        d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
 
+  <!-- Script para abrir/fechar menu com movimento do botão -->
+  <script>
+    const menu = document.getElementById("menu");
+    const menuBtn = document.getElementById("menuBtn");
+    let menuOpen = false;
 
+    menuBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+
+      if (menuOpen) {
+        menu.classList.remove("-translate-x-full");
+        menu.classList.add("translate-x-0");
+        menuBtn.style.transform = "translateX(18rem)";
+      } else {
+        menu.classList.remove("translate-x-0");
+        menu.classList.add("-translate-x-full");
+        menuBtn.style.transform = "translateX(0)";
+      }
+    });
+
+    // Fechar menu ao clicar em qualquer link
+    const menuLinks = menu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        menuOpen = false;
+        menu.classList.remove("translate-x-0");
+        menu.classList.add("-translate-x-full");
+        menuBtn.style.transform = "translateX(0)";
+      });
+    });
+  </script>
 
   <!-- Hero -->
   <section class="text-center py-12 bg-pink-100 fade-in">
