@@ -33,7 +33,7 @@
     <div class="max-w-4xl mx-auto relative">
       <input id="buscaInput" type="text" placeholder="Buscar produtos..."
         class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400 transition" />
-      <ul id="resultadosBusca" class="mt-2 bg-white rounded-md shadow-md hidden absolute w-full z-50 border border-gray-200"></ul>
+      <ul id="resultadosBusca" class="mt-2 bg-white rounded-md shadow-md hidden absolute w-full z-50 border border-gray-200 max-h-64 overflow-y-auto"></ul>
     </div>
   </div>
 
@@ -75,37 +75,6 @@
     <p class="text-gray-700 text-lg max-w-xl mx-auto mb-6">Descubra produtos que realçam sua beleza com um toque de elegância e autocuidado.</p>
     <a href="#cabelo" class="inline-block px-6 py-3 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
-
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  const menu = document.getElementById("menu");
-  const menuBtn = document.getElementById("menuBtn");
-  let menuOpen = false;
-
-  menuBtn.addEventListener("click", () => {
-    menuOpen = !menuOpen;
-
-    if (menuOpen) {
-      menu.classList.remove("-translate-x-full");
-      menu.classList.add("translate-x-0");
-      menuBtn.style.transform = "translateX(18rem)";
-    } else {
-      menu.classList.remove("translate-x-0");
-      menu.classList.add("-translate-x-full");
-      menuBtn.style.transform = "translateX(0)";
-    }
-  });
-
-  // Inicializa os ícones Lucide após DOM estar carregado
-  document.addEventListener("DOMContentLoaded", () => {
-    if (window.lucide) {
-      window.lucide.replace();
-    }
-  });
-</script>
-
-</body>
-</html>
 
   <!-- Cuidados com o Cabelo -->
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto fade-in">
@@ -187,16 +156,29 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
-    lucide.createIcons();
+    // Inicializa os ícones Lucide (substitui <i data-lucide="...">)
+    lucide.replace();
 
     const menu = document.getElementById("menu");
     const menuBtn = document.getElementById("menuBtn");
 
+    menuBtn.style.transition = "transform 0.3s ease"; // animação suave do botão
+
     menuBtn.addEventListener("click", () => {
       const aberto = menu.classList.contains("translate-x-0");
+
       menu.classList.toggle("translate-x-0", !aberto);
       menu.classList.toggle("-translate-x-full", aberto);
+
+      // Anima o botão deslizando para a direita quando menu aberto, volta quando fechado
+      if (!aberto) {
+        menuBtn.style.transform = "translateX(18rem)";
+      } else {
+        menuBtn.style.transform = "translateX(0)";
+      }
     });
 
     // Busca Global
@@ -206,12 +188,16 @@
 
     fetch("produtos.json")
       .then(res => res.json())
-      .then(data => produtos = data);
+      .then(data => produtos = data)
+      .catch(() => console.warn("Não foi possível carregar produtos.json"));
 
     buscaInput.addEventListener("input", () => {
       const termo = buscaInput.value.toLowerCase();
       resultadosLista.innerHTML = "";
-      if (!termo) return resultadosLista.classList.add("hidden");
+      if (!termo) {
+        resultadosLista.classList.add("hidden");
+        return;
+      }
 
       const encontrados = produtos.filter(prod =>
         prod.nome.toLowerCase().includes(termo) ||
@@ -227,6 +213,7 @@
       resultadosLista.classList.toggle("hidden", encontrados.length === 0);
     });
 
+    // Fecha a lista de resultados ao clicar fora
     document.addEventListener("click", e => {
       if (!buscaInput.contains(e.target) && !resultadosLista.contains(e.target)) {
         resultadosLista.classList.add("hidden");
