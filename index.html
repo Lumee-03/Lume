@@ -17,58 +17,61 @@
 </head>
 <body class="bg-white text-gray-800 scroll-smooth">
 
-  <!-- Navegação topo -->
-  <header class="sticky top-0 z-50 bg-white shadow-sm px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-purple-500">Lume</h1>
-    <nav class="space-x-6 text-sm font-medium text-purple-700">
-      <a href="#cabelo" class="hover:underline">Cabelo</a>
-      <a href="#corpo" class="hover:underline">Corpo & Banho</a>
-      <a href="cuidados_com_o_cabelo.html" class="hover:underline">Todos os Produtos</a>
-    </nav>
+  <!-- Topo com logo -->
+  <header class="sticky top-0 z-50 bg-white border-b shadow-sm px-6 py-4">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <img src="logo.png" alt="Lume Logo" class="h-12 sm:h-16">
+      <nav class="hidden sm:flex space-x-6 text-sm font-medium text-purple-700">
+        <a href="#cabelo" class="hover:underline">Cabelo</a>
+        <a href="#corpo" class="hover:underline">Corpo & Banho</a>
+        <a href="cuidados_com_o_cabelo.html" class="hover:underline">Todos os Produtos</a>
+      </nav>
+    </div>
+    <!-- Barra de busca -->
+    <div class="mt-4 max-w-xl mx-auto">
+      <input id="searchInput" type="text" placeholder="Buscar produtos..." class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-purple-300">
+      <ul id="searchResults" class="mt-2 bg-white border rounded-md shadow max-h-60 overflow-y-auto hidden"></ul>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="text-center py-20 bg-pink-50 fade-in">
     <h2 class="text-4xl font-semibold mb-4 text-purple-700">Brilhe com leveza</h2>
     <p class="text-gray-600 max-w-lg mx-auto mb-6">Selecionamos os melhores produtos para sua rotina de cuidados, com um toque jovem e delicado. Explore o universo Lume.</p>
-    <a href="#cabelo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition text-sm">Começar agora</a>
+    <a href="#cabelo" class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-600 hover:scale-105 transition-all duration-300 inline-block">Começar agora</a>
   </section>
 
   <!-- Cuidados com o Cabelo -->
   <section id="cabelo" class="py-16 px-6 max-w-6xl mx-auto fade-in">
     <h3 class="text-2xl font-semibold text-purple-700 mb-10 text-center">Cuidados com o Cabelo</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 1 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="loreal1.jpg" alt="L'Oréal" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">Elseve Óleo Extraordinário</h4>
           <p class="text-sm text-gray-600 mb-3">Anti Frizz, brilho e proteção térmica. 100ml</p>
-          <a href="https://amzn.to/4e3HW2I" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/4e3HW2I" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 2 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="morte1.jpg" alt="Morte Súbita" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">Máscara Morte Súbita 450g</h4>
           <p class="text-sm text-gray-600 mb-3">Hidratação profunda. Restaura brilho e maciez.</p>
-          <a href="https://amzn.to/45VmbzX" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/45VmbzX" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 3 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="lorealpro1.jpg" alt="Óleo 10 em 1" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">Óleo 10 em 1 Absolut Repair</h4>
           <p class="text-sm text-gray-600 mb-3">Nutrição e reparação intensa. Com quinoa & proteínas.</p>
-          <a href="https://amzn.to/3FZtEn5" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/3FZtEn5" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-    </div>
-    <div class="text-center mt-10">
-      <a href="cuidados_com_o_cabelo.html" class="text-purple-600 hover:text-purple-800 underline">Ver todos os produtos de cabelo</a>
     </div>
   </section>
 
@@ -76,37 +79,33 @@
   <section id="corpo" class="py-16 px-6 max-w-6xl mx-auto fade-in">
     <h3 class="text-2xl font-semibold text-purple-700 mb-10 text-center">Corpo e Banho</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 1 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="nivea1.jpg" alt="NIVEA" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">NIVEA Óleo de Banho 200ml</h4>
           <p class="text-sm text-gray-600 mb-3">Espuma cremosa e hidratação intensa com 55% de óleos naturais.</p>
-          <a href="https://amzn.to/3HHh6RH" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/3HHh6RH" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 2 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="cerave1.jpg" alt="CeraVe" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">CeraVe Loção Hidratante</h4>
           <p class="text-sm text-gray-600 mb-3">Ácido hialurônico e ceramidas. Textura leve e eficaz.</p>
-          <a href="https://amzn.to/4kK4Lem" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/4kK4Lem" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition">
+      <!-- Produto 3 -->
+      <div class="bg-white border rounded-xl shadow hover:shadow-lg transition hover:scale-105 duration-300">
         <img src="cetaphil1.jpg" alt="Cetaphil" class="w-full h-64 object-contain bg-gray-50">
         <div class="p-4">
           <h4 class="font-medium text-purple-700 mb-2">Cetaphil Creme Hidratante 453g</h4>
           <p class="text-sm text-gray-600 mb-3">Ideal para pele seca e sensível. Hidratação intensa e duradoura.</p>
-          <a href="https://amzn.to/4n30lR4" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 transition">Ver na Amazon</a>
+          <a href="https://amzn.to/4n30lR4" target="_blank" class="block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600 hover:scale-105 transition-all">Ver na Amazon</a>
         </div>
       </div>
-
-    </div>
-    <div class="text-center mt-10">
-      <a href="corpo_e_banho.html" class="text-purple-600 hover:text-purple-800 underline">Ver todos os produtos de banho</a>
     </div>
   </section>
 
@@ -114,6 +113,33 @@
   <footer class="mt-20 text-center py-8 text-sm text-gray-500 border-t">
     © 2025 Lume • Afiliado Amazon. Com amor, para você ✨
   </footer>
+
+  <!-- Script de busca -->
+  <script>
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+
+    input.addEventListener('input', async () => {
+      const query = input.value.toLowerCase().trim();
+      if (!query) {
+        results.innerHTML = '';
+        results.classList.add('hidden');
+        return;
+      }
+
+      const response = await fetch('produtos.json');
+      const data = await response.json();
+
+      const filtrados = data.filter(item => item.nome.toLowerCase().includes(query));
+      results.innerHTML = filtrados.map(item => `
+        <li class="px-4 py-2 hover:bg-purple-50 border-b">
+          <a href="${item.link}" target="_blank" class="text-purple-700 font-medium">${item.nome}</a>
+        </li>
+      `).join('');
+
+      results.classList.toggle('hidden', filtrados.length === 0);
+    });
+  </script>
 
 </body>
 </html>
