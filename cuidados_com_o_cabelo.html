@@ -316,6 +316,23 @@
     </a>
   </div>
 </div>
+
+      <!-- Produto: Morte Súbita Spray Reparação Total Lola Cosmetics -->
+<div class="border rounded-lg overflow-hidden shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+  <div class="relative w-full h-64 bg-gray-100">
+    <img id="mssprayCarouselImage" src="msspray1.jpg" alt="Morte Súbita Spray Reparação Total Lola Cosmetics" class="w-full h-full object-contain transition duration-300 ease-in-out">
+    <button onclick="prevMssprayImage()" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10094;</button>
+    <button onclick="nextMssprayImage()" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-1 rounded-full shadow hover:bg-purple-100">&#10095;</button>
+  </div>
+  <div class="p-4">
+    <h4 class="text-lg font-medium mb-2 text-purple-700">Lola Cosmetics Morte Súbita Spray Reparação Total 250ml</h4>
+    <p class="text-gray-600 mb-4">Spray leave-in multifuncional que repara, protege e fortalece os fios. Ideal para uso diário em cabelos danificados ou quimicamente tratados. Com proteção térmica.</p>
+    <a href="https://amzn.to/4n9tqdL" target="_blank"
+       class="text-white bg-purple-500 px-4 py-2 rounded-full block text-center font-semibold shadow-md transform transition duration-300 hover:bg-purple-600 hover:scale-105 hover:shadow-lg">
+      Ver na Amazon
+    </a>
+  </div>
+</div>
       
     </div>
   </section>
@@ -488,6 +505,18 @@
   function prevDanosMascaraImage() {
     danosMascaraIndex = (danosMascaraIndex - 1 + danosMascaraImages.length) % danosMascaraImages.length;
     document.getElementById('danosMascaraCarouselImage').src = danosMascaraImages[danosMascaraIndex];
+  }
+
+   //Produto: Morte Súbita Spray Reparação Total Lola Cosmetics
+   const mssprayImages = ['msspray1.jpg', 'msspray2.jpg', 'msspray3.jpg', 'msspray4.jpg', 'msspray5.jpg', 'msspray6.jpg', 'msspray7.jpg', 'msspray8.jpg'];
+  let mssprayIndex = 0;
+  function nextMssprayImage() {
+    mssprayIndex = (mssprayIndex + 1) % mssprayImages.length;
+    document.getElementById('mssprayCarouselImage').src = mssprayImages[mssprayIndex];
+  }
+  function prevMssprayImage() {
+    mssprayIndex = (mssprayIndex - 1 + mssprayImages.length) % mssprayImages.length;
+    document.getElementById('mssprayCarouselImage').src = mssprayImages[mssprayIndex];
   }
 
    
