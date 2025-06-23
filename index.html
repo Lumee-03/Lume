@@ -32,9 +32,22 @@
 </head>
 <body class="bg-white text-gray-800 relative">
 
- <!-- Logo -->
-<header class="text-center py-3 fade-in">
-  <img src="logo.png" alt="Logo Lume" class="mx-auto h-22">
+<style>
+  /* Limita a altura do header para faixa fina */
+  header.logo-header {
+    max-height: 80px; /* altura total da faixa */
+    overflow: hidden;
+  }
+  /* Ajusta a altura da imagem da logo e mantém proporção */
+  header.logo-header img {
+    height: 60px;
+    object-fit: contain;
+  }
+</style>
+
+<!-- Logo -->
+<header class="logo-header text-center fade-in py-2">
+  <img src="logo.png" alt="Logo Lume" class="mx-auto" />
 </header>
 
   <!-- Barra de Busca Global -->
