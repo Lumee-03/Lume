@@ -17,6 +17,10 @@
     .fade-in {
       animation: fadeIn 0.8s ease-in-out;
     }
+    /* Botão menu: transição suave no transform */
+    #menuBtn {
+      transition: transform 0.3s ease;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 relative">
@@ -58,7 +62,8 @@
 
   <!-- Botão menu flutuante -->
   <button id="menuBtn"
-    class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-transform duration-300 focus:outline-none">
+    class="fixed top-4 left-4 z-50 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none"
+    aria-label="Abrir menu">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -72,6 +77,38 @@
     <p class="text-gray-700 text-lg max-w-xl mx-auto mb-6">Descubra produtos que realçam sua beleza com um toque de elegância e autocuidado.</p>
     <a href="#cabelo" class="inline-block px-6 py-3 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition">Explorar Produtos</a>
   </section>
+
+<script>
+  const menu = document.getElementById("menu");
+  const menuBtn = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  menuBtn.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+
+    if (menuOpen) {
+      menu.classList.remove("-translate-x-full");
+      menu.classList.add("translate-x-0");
+      // Desliza o botão para a direita usando translateX
+      menuBtn.style.transform = "translateX(18rem)"; // 64*4=256px ~ 18rem
+    } else {
+      menu.classList.remove("translate-x-0");
+      menu.classList.add("-translate-x-full");
+      // Volta botão para a posição inicial
+      menuBtn.style.transform = "translateX(0)";
+    }
+  });
+</script>
+
+<script>
+  // Inicializa os ícones Lucide após carregar o DOM
+  window.addEventListener('load', () => {
+    if (window.lucide) {
+      window.lucide.replace();
+    }
+  });
+</script>
+
 
 <script>
   const menu = document.getElementById("menu");
@@ -106,8 +143,6 @@
   });
 </script>
 
-</body>
-</html>
 
   <!-- Cuidados com o Cabelo -->
   <section id="cabelo" class="py-12 px-4 max-w-6xl mx-auto fade-in">
