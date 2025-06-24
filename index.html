@@ -316,9 +316,12 @@
       .catch(() => (produtos = [])); // evita erros caso arquivo não exista
 
     buscaInput.addEventListener("input", () => {
-      const termo = buscaInput.value.toLowerCase();
+      const termo = buscaInput.value.toLowerCase().trim();
       resultadosLista.innerHTML = "";
-      if (!termo) return resultadosLista.classList.add("hidden");
+      if (!termo) {
+        resultadosLista.classList.add("hidden");
+        return;
+      }
 
       const encontrados = produtos.filter(
         (prod) =>
@@ -328,7 +331,17 @@
 
       encontrados.forEach((prod) => {
         const li = document.createElement("li");
-        li.innerHTML = `<a href="${prod.link}" target="_blank" class="block px-4 py-2 hover:bg-purple-50 text-purple-700">${prod.nome}</a>`;
+        li.className = "border-b last:border-none";
+
+        li.innerHTML = `
+          <a href="${prod.link}" target="_blank" class="flex items-center px-4 py-3 hover:bg-purple-50 text-purple-700">
+            <img src="${prod.imagem}" alt="${prod.nome}" class="w-12 h-12 object-contain rounded mr-4 bg-gray-100" />
+            <div>
+              <p class="font-semibold">${prod.nome}</p>
+              <p class="text-xs text-gray-500 truncate max-w-xs">${prod.descricao}</p>
+            </div>
+          </a>
+        `;
         resultadosLista.appendChild(li);
       });
 
