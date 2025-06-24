@@ -1,3 +1,5 @@
+//Produtos cuidados com o cabelo
+
 [
   {
     "id": "morte_sudada_mascara",
@@ -150,5 +152,74 @@
     "imagem": "dream1.jpg",
     "url": "https://amzn.to/4ntnuN4",
     "categoria": "cuidados_com_o_cabelo"
+  }
+]
+
+
+//Produtos corpo e banho
+
+[
+  {
+    "id": "nivea1",
+    "nome": "NIVEA Sabonete Líquido Óleo de Banho 200ml",
+    "descricao": "Com 55% de óleos naturais, produz espuma cremosa e proporciona hidratação intensa, maciez e cuidado único com a pele.",
+    "imagem": "nivea1.jpg",
+    "link": "https://amzn.to/3HHh6RH"
+  },
+  {
+    "id": "cerave1",
+    "nome": "CeraVe Loção Hidratante Corporal",
+    "descricao": "Com textura fluida e Ácido Hialurônico, ajuda a restaurar a barreira protetora da pele. Ideal para uso diário.",
+    "imagem": "cerave1.jpg",
+    "link": "https://amzn.to/4kK4Lem"
+  },
+  {
+    "id": "nivealocao",
+    "nome": "NIVEA Loção Deo-Hidratante Milk 400ml",
+    "descricao": "Hidratação e nutrição profunda por 72h para uma pele macia e suave. Ideal para peles secas e ressecadas.",
+    "imagem": "nivealocao.jpg",
+    "link": "https://amzn.to/4ngSfES"
+  },
+  {
+    "id": "cetaphil1",
+    "nome": "Cetaphil Creme Hidratante 453g",
+    "descricao": "Hidratação intensa para peles secas e sensíveis. Fórmula suave e eficaz, ideal para uso diário.",
+    "imagem": "cetaphil1.jpg",
+    "link": "https://amzn.to/4n30lR4"
+  },
+  {
+    "id": "locao1",
+    "nome": "Cetaphil Loção Hidratante 473ml",
+    "descricao": "Hidratação prolongada com fórmula leve e não oleosa. Ideal para peles sensíveis, com rápida absorção.",
+    "imagem": "locao1.jpg",
+    "link": "https://amzn.to/45X5lke"
+  },
+  {
+    "id": "epidrat1",
+    "nome": "MANTECORP Epidrat Calm B5",
+    "descricao": "Hidratante calmante com D-Pantenol que alivia irritações, promove conforto imediato e hidrata profundamente a pele sensível.",
+    "imagem": "epidrat1.jpg",
+    "link": "https://amzn.to/3FUlhct"
+  },
+  {
+    "id": "ceravecreme1",
+    "nome": "CeraVe Creme Hidratante Corporal",
+    "descricao": "Com textura cremosa, ácido hialurônico e 3 ceramidas essenciais, hidrata profundamente e restaura a barreira da pele seca.",
+    "imagem": "ceravecreme1.jpg",
+    "link": "https://amzn.to/4l4xxpD"
+  },
+  {
+    "id": "mustela1",
+    "nome": "Mustela Cicastela Creme Reparador 40ml",
+    "descricao": "Repara, hidrata, purifica e acalma a pele dos bebês. Ideal para pequenos machucados, vermelhidão e irritações leves.",
+    "imagem": "mustela1.jpg",
+    "link": "https://amzn.to/3HELz33"
+  },
+  {
+    "id": "bepantol1",
+    "nome": "Bepantol Derma Toque Seco 30g",
+    "descricao": "Oil Free, Hidratante facial e corporal. Ideal para peles sensíveis e secas. Textura leve e rápida absorção.",
+    "imagem": "bepantol1.jpg",
+    "link": "https://amzn.to/3ZxoOUH"
   }
 ]
